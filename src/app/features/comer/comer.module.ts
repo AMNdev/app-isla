@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { ComerComponent } from './components/comer/comer.component';
 import { MostrarComponent } from './components/mostrar/mostrar.component';
+import { ComerRoutingModule } from './comer-routing.module';
 
 
 
@@ -15,5 +17,4 @@ import { MostrarComponent } from './components/mostrar/mostrar.component';
     ComerRoutingModule
   ]
 })
-export class ComerRoutingModule { }
-
+export class ComerModule { }
