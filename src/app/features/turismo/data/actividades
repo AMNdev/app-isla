@@ -1,0 +1,23 @@
+import { ActividadTuristica } from '../../../shared/interfaces/turismo.interface';
+
+// Mocks para actividades turísticas
+export const mockActividad1: ActividadTuristica = {
+  nombre: 'Visita a las Salinas',
+  descripcion: 'Descubre la belleza de las salinas locales y su historia.',
+  enlaceWeb: 'https://www.salinas-tour.com',
+  telefono: '+34 123 456 789',
+};
+
+export const mockActividad2: ActividadTuristica = {
+  nombre: 'Paseo en Barco',
+  descripcion: 'Disfruta de un relajante paseo en barco por la costa.',
+  enlaceWeb: 'https://www.paseo-en-barco.com',
+  telefono: '+34 987 654 321',
+};
+
+export const mockActividad3: ActividadTuristica = {
+  nombre: 'Rutas en Tuctuc',
+  descripcion: 'Explora la ciudad en un divertido tuctuc con guía.',
+  enlaceWeb: 'https://www.rutas-tuctuc.com',
+  telefono: '+34 567 890 123',
+};
