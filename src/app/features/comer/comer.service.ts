@@ -12,15 +12,14 @@ export class ComerService {
       link: 'www.elrinconcito.com',
       descripcion:
         'Un lugar acogedor para disfrutar de la mejor comida mexicana',
-      localizacion: 'https://www.google.com/maps/place/Calle+de+la+Paz,+Madrid',
+      gMaps: 'https://www.google.com/maps/place/Calle+de+la+Paz,+Madrid',
     },
     {
       nombre: 'La Trattoria',
       direccion: 'Avenida Italia, Barcelona',
       link: 'www.latrattoria.com',
       descripcion: 'Auténtica cocina italiana en el corazón de Barcelona',
-      localizacion:
-        'https://www.google.com/maps/place/Avenida+Italia,+Barcelona',
+      gMaps: 'https://www.google.com/maps/place/Avenida+Italia,+Barcelona',
     },
     {
       nombre: 'Sushi Fusion',
@@ -28,7 +27,7 @@ export class ComerService {
       link: 'www.sushifusion-valencia.com',
       descripcion:
         'Una experiencia única que fusiona sabores japoneses y mediterráneos',
-      localizacion: 'https://www.google.com/maps/place/Calle+Sushi,+Valencia',
+      gMaps: 'https://www.google.com/maps/place/Calle+Sushi,+Valencia',
     },
     {
       nombre: 'Burger Heaven',
@@ -36,7 +35,7 @@ export class ComerService {
       link: 'www.burgerheaven-sevilla.com',
       descripcion:
         'Las mejores hamburguesas de Sevilla, ¡un paraíso para los amantes de la carne!',
-      localizacion:
+      gMaps:
         'https://www.google.com/maps/place/Plaza+de+las+Hamburguesas,+Sevilla',
     },
     {
@@ -45,15 +44,14 @@ export class ComerService {
       link: 'www.pastaparadiso-zaragoza.com',
       descripcion:
         'El rincón ideal para los amantes de la pasta fresca y deliciosa',
-      localizacion:
-        'https://www.google.com/maps/place/Calle+de+la+Pasta,+Zaragoza',
+      gMaps: 'https://www.google.com/maps/place/Calle+de+la+Pasta,+Zaragoza',
     },
     {
       nombre: 'Veggie Delight',
       direccion: 'Avenida Verde, Bilbao',
       link: 'www.veggiedelight-bilbao.com',
       descripcion: 'Comida vegetariana deliciosa, ¡un deleite para tu paladar!',
-      localizacion: 'https://www.google.com/maps/place/Avenida+Verde,+Bilbao',
+      gMaps: 'https://www.google.com/maps/place/Avenida+Verde,+Bilbao',
     },
     {
       nombre: "Fisherman's Catch",
@@ -61,8 +59,7 @@ export class ComerService {
       link: 'www.fishermanscatch-malaga.com',
       descripcion:
         'Mariscos y pescados frescos en un ambiente costero encantador',
-      localizacion:
-        'https://www.google.com/maps/place/Paseo+del+Pescador,+Málaga',
+      gMaps: 'https://www.google.com/maps/place/Paseo+del+Pescador,+Málaga',
     },
     {
       nombre: 'Wok Wonders',
@@ -70,7 +67,7 @@ export class ComerService {
       link: 'www.wokwonders-alicante.com',
       descripcion:
         'Wok asiático con una variedad sorprendente de sabores y ingredientes',
-      localizacion: 'https://www.google.com/maps/place/Calle+del+Wok,+Alicante',
+      gMaps: 'https://www.google.com/maps/place/Calle+del+Wok,+Alicante',
     },
     {
       nombre: 'Steakhouse Supreme',
@@ -78,8 +75,7 @@ export class ComerService {
       link: 'www.steakhousesupreme-murcia.com',
       descripcion:
         'Carnes a la parrilla preparadas con maestría, ¡una experiencia suprema!',
-      localizacion:
-        'https://www.google.com/maps/place/Carrera+de+las+Carnes,+Murcia',
+      gMaps: 'https://www.google.com/maps/place/Carrera+de+las+Carnes,+Murcia',
     },
     {
       nombre: 'Sweet Temptations',
@@ -87,8 +83,7 @@ export class ComerService {
       link: 'www.sweettemptations-granada.com',
       descripcion:
         'El paraíso para los amantes de los postres, ¡déjate tentar por lo dulce!',
-      localizacion:
-        'https://www.google.com/maps/place/Calle+de+los+Postres,+Granada',
+      gMaps: 'https://www.google.com/maps/place/Calle+de+los+Postres,+Granada',
     },
   ];
   constructor() {}

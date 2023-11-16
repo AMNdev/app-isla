@@ -9,6 +9,6 @@ export interface Restaurante {
   direccion:    string;
   link:         string;
   descripcion:  string;
-  localizacion: string;
+  gMaps:        string;
 }
 
