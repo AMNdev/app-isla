@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComerComponent } from './components/comer/comer.component';
+import { MostrarComponent } from './components/mostrar/mostrar.component';
 
 
 
 @NgModule({
   declarations: [
-    ComerComponent
+    ComerComponent,
+    MostrarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComerRoutingModule
   ]
 })
-export class ComerModule { }
+export class ComerRoutingModule { }
+
