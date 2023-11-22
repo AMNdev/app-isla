@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TurismoComponent } from './components/turismo/turismo.component';
 
+import { TurismoComponent } from './components/turismo/turismo.component';
+import { MostrarComponent } from './components/mostrar/mostrar.component';
+import { TurismoRoutingModule } from './turismo-routing.module';
 
 
 @NgModule({
   declarations: [
-
-  
-    TurismoComponent
+    TurismoComponent,
+    MostrarComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    TurismoRoutingModule
+  ],
 })
-export class TurismoModule { }
+export class TurismoModule {}

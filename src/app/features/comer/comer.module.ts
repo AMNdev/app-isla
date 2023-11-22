@@ -6,7 +6,6 @@ import { MostrarComponent } from './components/mostrar/mostrar.component';
 import { ComerRoutingModule } from './comer-routing.module';
 
 
-
 @NgModule({
   declarations: [
     ComerComponent,
