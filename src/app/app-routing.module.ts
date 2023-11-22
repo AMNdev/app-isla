@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './core/menu/menu.component';
+import { AdminMenuComponent } from './admin/components/admin-menu/admin-menu.component';
 
 const routes: Routes = [
   {
@@ -28,12 +29,16 @@ const routes: Routes = [
     loadChildren: () => import('./features/turismo/turismo-routing.module').then(m => m.TurismoRoutingModule)
   },
   {
+    path: 'carmen',
+    loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule)
+  },
+  {
     path: '',
     component: MenuComponent
   },
   {
     path: '**',
-    component: MenuComponent
+    redirectTo: ''
   }
 
 ];
