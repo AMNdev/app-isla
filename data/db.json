@@ -1,0 +1,166 @@
+{
+  "restaurantes": [
+    {
+      "nombre": "El Rinconcito",
+      "direccion": "Calle de la Paz, Madrid",
+      "link": "www.elrinconcito.com",
+      "descripcion": "Un lugar acogedor para disfrutar de la mejor comida mexicana",
+      "gMaps": "https://www.google.com/maps/place/Calle+de+la+Paz,+Madrid"
+    },
+    {
+      "nombre": "La Trattoria",
+      "direccion": "Avenida Italia, Barcelona",
+      "link": "www.latrattoria.com",
+      "descripcion": "Auténtica cocina italiana en el corazón de Barcelona",
+      "gMaps": "https://www.google.com/maps/place/Avenida+Italia,+Barcelona"
+    },
+    {
+      "nombre": "Sushi Fusion",
+      "direccion": "Calle Sushi, Valencia",
+      "link": "www.sushifusion-valencia.com",
+      "descripcion": "Una experiencia única que fusiona sabores japoneses y mediterráneos",
+      "gMaps": "https://www.google.com/maps/place/Calle+Sushi,+Valencia"
+    },
+    {
+      "nombre": "Burger Heaven",
+      "direccion": "Plaza de las Hamburguesas, Sevilla",
+      "link": "www.burgerheaven-sevilla.com",
+      "descripcion": "Las mejores hamburguesas de Sevilla, ¡un paraíso para los amantes de la carne!",
+      "gMaps": "https://www.google.com/maps/place/Plaza+de+las+Hamburguesas,+Sevilla"
+    },
+    {
+      "nombre": "Pasta Paradiso",
+      "direccion": "Calle de la Pasta, Zaragoza",
+      "link": "www.pastaparadiso-zaragoza.com",
+      "descripcion": "El rincón ideal para los amantes de la pasta fresca y deliciosa",
+      "gMaps": "https://www.google.com/maps/place/Calle+de+la+Pasta,+Zaragoza"
+    },
+    {
+      "nombre": "Veggie Delight",
+      "direccion": "Avenida Verde, Bilbao",
+      "link": "www.veggiedelight-bilbao.com",
+      "descripcion": "Comida vegetariana deliciosa, ¡un deleite para tu paladar!",
+      "gMaps": "https://www.google.com/maps/place/Avenida+Verde,+Bilbao"
+    },
+    {
+      "nombre": "Fisherman's Catch",
+      "direccion": "Paseo del Pescador, Málaga",
+      "link": "www.fishermanscatch-malaga.com",
+      "descripcion": "Mariscos y pescados frescos en un ambiente costero encantador",
+      "gMaps": "https://www.google.com/maps/place/Paseo+del+Pescador,+Málaga"
+    },
+    {
+      "nombre": "Wok Wonders",
+      "direccion": "Calle del Wok, Alicante",
+      "link": "www.wokwonders-alicante.com",
+      "descripcion": "Wok asiático con una variedad sorprendente de sabores y ingredientes",
+      "gMaps": "https://www.google.com/maps/place/Calle+del+Wok,+Alicante"
+    },
+    {
+      "nombre": "Steakhouse Supreme",
+      "direccion": "Carrera de las Carnes, Murcia",
+      "link": "www.steakhousesupreme-murcia.com",
+      "descripcion": "Carnes a la parrilla preparadas con maestría, ¡una experiencia suprema!",
+      "gMaps": "https://www.google.com/maps/place/Carrera+de+las+Carnes,+Murcia"
+    },
+    {
+      "nombre": "Sweet Temptations",
+      "direccion": "Calle de los Postres, Granada",
+      "link": "www.sweettemptations-granada.com",
+      "descripcion": "El paraíso para los amantes de los postres, ¡déjate tentar por lo dulce!",
+      "gMaps": "https://www.google.com/maps/place/Calle+de+los+Postres,+Granada"
+    }
+  ],
+  "info": {
+    "piso": {
+      "descripcion": [
+        "Este es un piso turístico encantador en el corazón de la ciudad.",
+        "Con impresionantes vistas y comodidades modernas, te sentirás como en casa."
+      ],
+      "video": [
+        "https://www.youtube.com/watch?v=video1",
+        "https://www.youtube.com/watch?v=video2"
+      ]
+    },
+    "instrucciones": [{
+      "aparato": "Televisor",
+      "descripcion": [
+        "Enciende el televisor usando el control remoto.",
+        "Selecciona el canal deseado.",
+        "Ajusta el volumen según tu preferencia."
+      ],
+      "video": [
+        "https://www.youtube.com/watch?v=tv-instructions"
+      ],
+      "imagenes": [
+        "url_de_imagen_tv_1.jpg",
+        "url_de_imagen_tv_2.jpg"
+      ]
+    },
+    {
+      "aparato": "butano",
+      "descripcion": [
+        "El piso utiliza bombonas de butano para la cocina y la calefacción.",
+        "Si necesitas cambiar la bombona, sigue estos pasos:"
+      ],
+      "video": [
+        "https://www.youtube.com/watch?v=butano-instructions"
+      ],
+      "imagenes": [
+        "url_de_img_butano_1.jpg",
+        "url_de_img_butano_2.jpg"
+      ]
+    }]
+  },
+  "playas": [
+    {
+      "nombre": "Playa Central",
+      "descripcion": "Una playa amplia y popular con arena fina y aguas cristalinas.",
+      "gMaps": "https://www.google.com/maps/place/Playa+Central,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_central.jpg"
+    },
+    {
+      "nombre": "Playa de los Pescadores",
+      "descripcion": "Una encantadora playa junto al puerto, ideal para relajarse y disfrutar del paisaje marino.",
+      "gMaps": "https://www.google.com/maps/place/Playa+de+los+Pescadores,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_pescadores.jpg"
+    },
+    {
+      "nombre": "Playa de Islantilla",
+      "descripcion": "Una extensa playa con dunas y áreas naturales, perfecta para largos paseos junto al mar.",
+      "gMaps": "https://www.google.com/maps/place/Playa+de+Islantilla,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_islantilla.jpg"
+    },
+    {
+      "nombre": "Playa del Hoyo",
+      "descripcion": "Una playa más tranquila, alejada del bullicio, con aguas claras y ambiente sereno.",
+      "gMaps": "https://www.google.com/maps/place/Playa+del+Hoyo,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_hoyo.jpg"
+    },
+    {
+      "nombre": "Playa de la Casita Azul",
+      "descripcion": "Una pequeña playa con encanto, ideal para aquellos que buscan tranquilidad y belleza escénica.",
+      "gMaps": "https://www.google.com/maps/place/Playa+de+la+Casita+Azul,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_casita_azul.jpg"
+    },
+    {
+      "nombre": "Playa Dorada",
+      "descripcion": "Una playa de arenas doradas y aguas cristalinas, perfecta para disfrutar del sol y el mar.",
+      "gMaps": "https://www.google.com/maps/place/Playa+Dorada,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_dorada.jpg"
+    },
+    {
+      "nombre": "Playa de los Corales",
+      "descripcion": "Una playa con arrecifes de corales, ideal para la práctica de snorkel y buceo.",
+      "gMaps": "https://www.google.com/maps/place/Playa+de+los+Corales,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_corales.jpg"
+    },
+    {
+      "nombre": "Playa del Sol",
+      "descripcion": "Una playa soleada con extensas áreas para tomar el sol y disfrutar de actividades playeras.",
+      "gMaps": "https://www.google.com/maps/place/Playa+del+Sol,+Isla+Cristina",
+      "imagen": "url_de_la_imagen_playa_sol.jpg"
+    }
+  ]
+
+}
