@@ -1,6 +1,7 @@
 {
   "restaurantes": [
     {
+      "id": "ElRinconcito",
       "nombre": "El Rinconcito",
       "direccion": "Calle de la Paz, Madrid",
       "link": "www.elrinconcito.com",
@@ -8,6 +9,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+de+la+Paz,+Madrid"
     },
     {
+      "id": "LaTrattoria",
       "nombre": "La Trattoria",
       "direccion": "Avenida Italia, Barcelona",
       "link": "www.latrattoria.com",
@@ -15,6 +17,7 @@
       "gMaps": "https://www.google.com/maps/place/Avenida+Italia,+Barcelona"
     },
     {
+      "id": "SushiFusion",
       "nombre": "Sushi Fusion",
       "direccion": "Calle Sushi, Valencia",
       "link": "www.sushifusion-valencia.com",
@@ -22,6 +25,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+Sushi,+Valencia"
     },
     {
+      "id": "BurgerHeaven",
       "nombre": "Burger Heaven",
       "direccion": "Plaza de las Hamburguesas, Sevilla",
       "link": "www.burgerheaven-sevilla.com",
@@ -29,6 +33,7 @@
       "gMaps": "https://www.google.com/maps/place/Plaza+de+las+Hamburguesas,+Sevilla"
     },
     {
+      "id": "PastaParadiso",
       "nombre": "Pasta Paradiso",
       "direccion": "Calle de la Pasta, Zaragoza",
       "link": "www.pastaparadiso-zaragoza.com",
@@ -36,6 +41,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+de+la+Pasta,+Zaragoza"
     },
     {
+      "id": "VeggieDelight",
       "nombre": "Veggie Delight",
       "direccion": "Avenida Verde, Bilbao",
       "link": "www.veggiedelight-bilbao.com",
@@ -43,6 +49,7 @@
       "gMaps": "https://www.google.com/maps/place/Avenida+Verde,+Bilbao"
     },
     {
+      "id": "sCatch",
       "nombre": "Fisherman's Catch",
       "direccion": "Paseo del Pescador, Málaga",
       "link": "www.fishermanscatch-malaga.com",
@@ -50,6 +57,7 @@
       "gMaps": "https://www.google.com/maps/place/Paseo+del+Pescador,+Málaga"
     },
     {
+      "id": "WokWonders",
       "nombre": "Wok Wonders",
       "direccion": "Calle del Wok, Alicante",
       "link": "www.wokwonders-alicante.com",
@@ -57,6 +65,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+del+Wok,+Alicante"
     },
     {
+      "id": "SteakhouseSupreme",
       "nombre": "Steakhouse Supreme",
       "direccion": "Carrera de las Carnes, Murcia",
       "link": "www.steakhousesupreme-murcia.com",
@@ -64,6 +73,7 @@
       "gMaps": "https://www.google.com/maps/place/Carrera+de+las+Carnes,+Murcia"
     },
     {
+      "id": "SweetTemptations",
       "nombre": "Sweet Temptations",
       "direccion": "Calle de los Postres, Granada",
       "link": "www.sweettemptations-granada.com",

@@ -9,32 +9,32 @@ export class MenuComponent {
   public featuresList = [
     {
       feature_name: 'comer',
-      link: 'link',
+      link: 'comer',
       image: 'https://picsum.photos/180',
     },
     {
       feature_name: 'info',
-      link: 'link',
+      link: 'info',
       image: 'https://picsum.photos/180',
     },
     {
       feature_name: 'playas',
       image: 'https://picsum.photos/180',
-      link: 'link',
+      link: 'playas',
     },
     {
       feature_name: 'previo',
-      link: 'link',
+      link: 'previo',
       image: 'https://picsum.photos/180',
     },
     {
       feature_name: 'turismo',
-      link: 'link',
+      link: 'turismo',
       image: 'https://picsum.photos/180',
     },
     {
       feature_name: 'otros',
-      link: 'link',
+      link: 'otros',
       image: 'https://picsum.photos/180',
     },
   ];
