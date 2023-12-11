@@ -1,1 +1,15 @@
-<p>info works!</p>
+<ng-container *ngIf="info.length>0; else elseTemplate">
+  <mat-card *ngFor="let item of info" class="item flex justify-content-around align-items-center shadow-3 m-4">
+    <mat-card-header class="mb-2">
+      <mat-card-title>
+        <a [routerLink]="['./', item.id]">
+          {{item.id| titlecase }}
+        </a>
+      </mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</ng-container>
+
+<ng-template #elseTemplate>
+  <shared-spinner></shared-spinner>
+</ng-template>

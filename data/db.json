@@ -81,47 +81,61 @@
       "gMaps": "https://www.google.com/maps/place/Calle+de+los+Postres,+Granada"
     }
   ],
-  "info": {
-    "piso": {
+  "info": [
+    {
+      "id": "piso",
+      "resumen": "aqui ponemos un resumen no muy largo sobre el piso",
       "descripcion": [
         "Este es un piso turístico encantador en el corazón de la ciudad.",
-        "Con impresionantes vistas y comodidades modernas, te sentirás como en casa."
+        "Con impresionantes vistas y comodidades modernas, te sentirás como en casa.",
+        "mas texto"
       ],
       "video": [
-        "https://www.youtube.com/watch?v=video1",
-        "https://www.youtube.com/watch?v=video2"
-      ]
-    },
-    "instrucciones": [{
-      "aparato": "Televisor",
-      "descripcion": [
-        "Enciende el televisor usando el control remoto.",
-        "Selecciona el canal deseado.",
-        "Ajusta el volumen según tu preferencia."
-      ],
-      "video": [
-        "https://www.youtube.com/watch?v=tv-instructions"
-      ],
-      "imagenes": [
-        "url_de_imagen_tv_1.jpg",
-        "url_de_imagen_tv_2.jpg"
+        {
+          "descripcion": "descripcion video 1",
+          "videoUrl": "https://www.youtube.com/embed/h2ec5kDOBaY?si=_S9p01QNiSqQEtaS"
+        },
+        {
+          "descripcion": "descripcion video 2",
+          "videoUrl": "https://www.youtube.com/embed/h2ec5kDOBaY?si=_S9p01QNiSqQEtaS"
+        }
       ]
     },
     {
-      "aparato": "butano",
-      "descripcion": [
-        "El piso utiliza bombonas de butano para la cocina y la calefacción.",
-        "Si necesitas cambiar la bombona, sigue estos pasos:"
-      ],
-      "video": [
-        "https://www.youtube.com/watch?v=butano-instructions"
-      ],
-      "imagenes": [
-        "url_de_img_butano_1.jpg",
-        "url_de_img_butano_2.jpg"
+      "id": "instrucciones",
+      "aparatos": [
+        {
+          "aparato": "Televisor",
+          "descripcion": [
+            "Enciende el televisor usando el control remoto.",
+            "Selecciona el canal deseado.",
+            "Ajusta el volumen según tu preferencia."
+          ],
+          "video": [
+            "https://www.youtube.com/embed/v=tv-instructions"
+          ],
+          "imagenes": [
+            "https://picsum.photos/180",
+            "https://picsum.photos/180"
+          ]
+        },
+        {
+          "aparato": "Calentador de agua",
+          "descripcion": [
+            "El piso utiliza bombonas de butano para calentar el agua",
+            "Si necesitas cambiar la bombona, sigue estos pasos:"
+          ],
+          "video": [
+            "https://www.youtube.com/watch?v=butano-instructions"
+          ],
+          "imagenes": [
+            "https://picsum.photos/180",
+            "https://picsum.photos/180"
+          ]
+        }
       ]
-    }]
-  },
+    }
+  ],
   "playas": [
     {
       "nombre": "Playa Central",
@@ -178,7 +192,10 @@
       "tipo": "Supermercado",
       "direccion": "Calle Principal, 123",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2097, "longitud": -7.3169 },
+      "coordenadas": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
@@ -186,7 +203,10 @@
       "tipo": "Electrónicos",
       "direccion": "Avenida Secundaria, 456",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2135, "longitud": -7.3184 },
+      "coordenadas": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     },
     {
@@ -194,7 +214,10 @@
       "tipo": "Supermercado",
       "direccion": "Carretera Principal, 789",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2144, "longitud": -7.4041 },
+      "coordenadas": {
+        "latitud": 37.2144,
+        "longitud": -7.4041
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
     },
     {
@@ -202,7 +225,10 @@
       "tipo": "Ropa",
       "direccion": "Calle Secundaria, 101",
       "poblacion": "Lepe",
-      "coordenadas": { "latitud": 37.2577, "longitud": -7.2099 },
+      "coordenadas": {
+        "latitud": 37.2577,
+        "longitud": -7.2099
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
     },
     {
@@ -210,7 +236,10 @@
       "tipo": "Juguetes",
       "direccion": "Avenida Principal, 222",
       "poblacion": "Ayamonte",
-      "coordenadas": { "latitud": 37.2622, "longitud": -6.9495 },
+      "coordenadas": {
+        "latitud": 37.2622,
+        "longitud": -6.9495
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
     }
   ],
@@ -220,7 +249,10 @@
       "direccion": "Calle Principal, 123",
       "poblacion": "Isla Cristina",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2097, "longitud": -7.3169 },
+      "coordenadas": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169",
       "todoElDia": true
     },
@@ -229,7 +261,10 @@
       "direccion": "Avenida Secundaria, 456",
       "poblacion": "Isla Cristina",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2135, "longitud": -7.3184 },
+      "coordenadas": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184",
       "todoElDia": false
     },
@@ -238,7 +273,10 @@
       "direccion": "Carretera Principal, 789",
       "poblacion": "Ayamonte",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2144, "longitud": -7.4041 },
+      "coordenadas": {
+        "latitud": 37.2144,
+        "longitud": -7.4041
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041",
       "todoElDia": true
     },
@@ -247,7 +285,10 @@
       "direccion": "Calle Secundaria, 101",
       "poblacion": "Lepe",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2577, "longitud": -7.2099 },
+      "coordenadas": {
+        "latitud": 37.2577,
+        "longitud": -7.2099
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099",
       "todoElDia": false
     },
@@ -256,7 +297,10 @@
       "direccion": "Avenida Principal, 222",
       "poblacion": "Huelva",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2622, "longitud": -6.9495 },
+      "coordenadas": {
+        "latitud": 37.2622,
+        "longitud": -6.9495
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495",
       "todoElDia": true
     }
@@ -267,7 +311,10 @@
       "tipo": "Farmacia",
       "direccion": "Calle Principal, 123",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2097, "longitud": -7.3169 },
+      "coordenadas": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
@@ -275,7 +322,10 @@
       "tipo": "Hospital",
       "direccion": "Avenida Secundaria, 456",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2135, "longitud": -7.3184 },
+      "coordenadas": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     },
     {
@@ -283,7 +333,10 @@
       "tipo": "Centro de Salud",
       "direccion": "Carretera Principal, 789",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2144, "longitud": -7.4041 },
+      "coordenadas": {
+        "latitud": 37.2144,
+        "longitud": -7.4041
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
     },
     {
@@ -291,7 +344,10 @@
       "tipo": "Farmacia",
       "direccion": "Calle Secundaria, 101",
       "poblacion": "Lepe",
-      "coordenadas": { "latitud": 37.2577, "longitud": -7.2099 },
+      "coordenadas": {
+        "latitud": 37.2577,
+        "longitud": -7.2099
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
     },
     {
@@ -299,7 +355,10 @@
       "tipo": "Centro de Salud",
       "direccion": "Avenida Principal, 222",
       "poblacion": "Ayamonte",
-      "coordenadas": { "latitud": 37.2622, "longitud": -6.9495 },
+      "coordenadas": {
+        "latitud": 37.2622,
+        "longitud": -6.9495
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
     }
   ],
@@ -319,13 +378,19 @@
     {
       "nombre": "Mi Piso Turístico",
       "direccion": "Calle Principal, 123",
-      "localizacion": { "latitud": 37.2097, "longitud": -7.3169 },
+      "localizacion": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
       "nombre": "Mi Garaje",
       "direccion": "Calle Secundaria, 456",
-      "localizacion": { "latitud": 37.2135, "longitud": -7.3184 },
+      "localizacion": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     }
   ]

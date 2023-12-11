@@ -15,11 +15,11 @@ export class ComerService  {
   constructor(private http: HttpClient) { }
 
   getRestaurants(): Observable<Restaurante[]>{
-    return this.http.get<Restaurante[]>(`${this.baseUrl}restaurantes`)
+    return this.http.get<Restaurante[]>(`${this.baseUrl}/restaurantes`)
   }
 
   getRestaurantById(id: string): Observable<Restaurante> {
-    return this.http.get<Restaurante>(`${this.baseUrl}restaurantes/${id}`)
+    return this.http.get<Restaurante>(`${this.baseUrl}/restaurantes/${id}`)
   }
 
 

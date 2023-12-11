@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MenuCardComponent } from './components/menu-card/menu-card.component';
 import { MaterialModule } from '../material/material.module';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { VideoContainerComponent } from './components/video-container/video-container.component';
 
 
 
@@ -11,7 +12,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   declarations: [
     MenuCardComponent,
     SpinnerComponent,
-  ],
+    VideoContainerComponent,
+
+   ],
   imports: [
     CommonModule,
     MaterialModule
@@ -19,6 +22,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   exports: [
     MenuCardComponent,
     SpinnerComponent,
+    VideoContainerComponent,
 
   ]
 })

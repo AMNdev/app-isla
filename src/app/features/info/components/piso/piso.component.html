@@ -1,0 +1,51 @@
+<ng-container *ngIf="piso; else elseTemplate">
+  <mat-tab-group>
+    <mat-tab label="{{piso.id | titlecase }}">
+
+      <mat-card class="m-5">
+        <mat-card-header>
+          <mat-card-title>Información relevante</mat-card-title>
+          <mat-card-subtitle> {{piso.resumen}} </mat-card-subtitle>
+        </mat-card-header>
+        <mat-divider class="mb-5"></mat-divider>
+        <mat-card-content>
+          <p *ngFor="let parte of piso.descripcion">
+            {{parte}}
+          </p>
+        </mat-card-content>
+        <!-- TODO: refactorizar matcardactions -->
+        <mat-card-actions class="flex justify-content-between	">
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star_border"></mat-icon>
+            <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star"></mat-icon>
+          </button>
+          <!-- <a href="{{piso}}" target="_blank">Como llegar</a> -->
+        </mat-card-actions>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="Vídeos">
+      <mat-card *ngFor="let video of piso.video" class="m-5">
+        <mat-card-header>
+          <mat-card-title>{{video.descripcion}}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <shared-video-container [videoUrl]="video.videoUrl"></shared-video-container>
+        </mat-card-content>
+        
+        <mat-card-actions class="flex justify-content-between	">
+          <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star_border"></mat-icon>
+            <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star"></mat-icon>
+          </button>
+          <!-- <a href="{{piso}}" target="_blank">Como llegar</a> -->
+        </mat-card-actions>
+      </mat-card>
+
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>
+
+<ng-template #elseTemplate>
+  <shared-spinner></shared-spinner>
+</ng-template>
