@@ -196,6 +196,7 @@
   ],
   "tiendas": [
     {
+      "id": "SupermercadoABC",
       "nombre": "Supermercado ABC",
       "tipo": "Supermercado",
       "direccion": "Calle Principal, 123",
@@ -204,9 +205,10 @@
         "latitud": 37.2097,
         "longitud": -7.3169
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
+      "gMaps": "https://maps.app.goo.gl/aTF896fFCr6BRz2MA"
     },
     {
+      "id": "Tiendadeadsa",
       "nombre": "Tienda de Electrónicos XYZ",
       "tipo": "Electrónicos",
       "direccion": "Avenida Secundaria, 456",
@@ -215,9 +217,10 @@
         "latitud": 37.2135,
         "longitud": -7.3184
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
+      "gMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     },
     {
+      "id": "SupermercadoXYZ",
       "nombre": "Supermercado XYZ",
       "tipo": "Supermercado",
       "direccion": "Carretera Principal, 789",
@@ -226,9 +229,10 @@
         "latitud": 37.2144,
         "longitud": -7.4041
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
+      "gMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
     },
     {
+      "id": "Tiendadejghfj",
       "nombre": "Tienda de Ropa ABC",
       "tipo": "Ropa",
       "direccion": "Calle Secundaria, 101",
@@ -237,9 +241,10 @@
         "latitud": 37.2577,
         "longitud": -7.2099
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
+      "gMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
     },
     {
+      "id": "Tiendadekjh",
       "nombre": "Tienda de Juguetes XYZ",
       "tipo": "Juguetes",
       "direccion": "Avenida Principal, 222",
@@ -248,11 +253,12 @@
         "latitud": 37.2622,
         "longitud": -6.9495
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
+      "gMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
     }
   ],
   "gasolineras": [
     {
+      "id": "Cristina1",
       "nombre": "Gasolinera Isla Cristina 1",
       "direccion": "Calle Principal, 123",
       "poblacion": "Isla Cristina",
@@ -261,10 +267,11 @@
         "latitud": 37.2097,
         "longitud": -7.3169
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169",
+      "gMaps": "https://www.google.com/maps/place/37.2097,-7.3169",
       "todoElDia": true
     },
     {
+      "id": "Cristina2",
       "nombre": "Gasolinera Isla Cristina 2",
       "direccion": "Avenida Secundaria, 456",
       "poblacion": "Isla Cristina",
@@ -273,10 +280,11 @@
         "latitud": 37.2135,
         "longitud": -7.3184
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184",
+      "gMaps": "https://www.google.com/maps/place/37.2135,-7.3184",
       "todoElDia": false
     },
     {
+      "id": "Ayamonte1",
       "nombre": "Gasolinera Ayamonte 1",
       "direccion": "Carretera Principal, 789",
       "poblacion": "Ayamonte",
@@ -285,10 +293,11 @@
         "latitud": 37.2144,
         "longitud": -7.4041
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041",
+      "gMaps": "https://www.google.com/maps/place/37.2144,-7.4041",
       "todoElDia": true
     },
     {
+      "id": "Lepe1",
       "nombre": "Gasolinera Lepe 1",
       "direccion": "Calle Secundaria, 101",
       "poblacion": "Lepe",
@@ -297,10 +306,11 @@
         "latitud": 37.2577,
         "longitud": -7.2099
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099",
+      "gMaps": "https://www.google.com/maps/place/37.2577,-7.2099",
       "todoElDia": false
     },
     {
+      "id": "Huelva1",
       "nombre": "Gasolinera Huelva 1",
       "direccion": "Avenida Principal, 222",
       "poblacion": "Huelva",
@@ -309,12 +319,13 @@
         "latitud": 37.2622,
         "longitud": -6.9495
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495",
+      "gMaps": "https://www.google.com/maps/place/37.2622,-6.9495",
       "todoElDia": true
     }
   ],
   "salud": [
     {
+      "id": "FarmaciaABC",
       "nombre": "Farmacia ABC",
       "tipo": "Farmacia",
       "direccion": "Calle Principal, 123",
@@ -323,9 +334,10 @@
         "latitud": 37.2097,
         "longitud": -7.3169
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
+      "gMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
+      "id": "HospitalXYZ",
       "nombre": "Hospital XYZ",
       "tipo": "Hospital",
       "direccion": "Avenida Secundaria, 456",
@@ -334,9 +346,10 @@
         "latitud": 37.2135,
         "longitud": -7.3184
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
+      "gMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     },
     {
+      "id": "SaludXYZ",
       "nombre": "Centro de Salud XYZ",
       "tipo": "Centro de Salud",
       "direccion": "Carretera Principal, 789",
@@ -345,9 +358,10 @@
         "latitud": 37.2144,
         "longitud": -7.4041
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
+      "gMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
     },
     {
+      "id": "FarmaciaXYZ",
       "nombre": "Farmacia XYZ",
       "tipo": "Farmacia",
       "direccion": "Calle Secundaria, 101",
@@ -356,9 +370,10 @@
         "latitud": 37.2577,
         "longitud": -7.2099
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
+      "gMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
     },
     {
+      "id": "SaludABC",
       "nombre": "Centro de Salud ABC",
       "tipo": "Centro de Salud",
       "direccion": "Avenida Principal, 222",
@@ -367,7 +382,7 @@
         "latitud": 37.2622,
         "longitud": -6.9495
       },
-      "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
+      "gMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
     }
   ],
   "normas": [

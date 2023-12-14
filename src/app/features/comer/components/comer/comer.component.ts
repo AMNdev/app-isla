@@ -13,8 +13,6 @@ export class ComerComponent implements OnInit {
   constructor(private data: ComerService) {}
 
   ngOnInit(): void {
-    console.log('comer component onInit');
-
     this.data.getRestaurants()
       .subscribe(list => this.restaurants=list);
   }

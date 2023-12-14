@@ -1,1 +1,10 @@
-<p>otros works!</p>
+<mat-card *ngFor="let opcion of opciones  "
+class="item flex justify-content-around align-items-center shadow-3 m-4">
+<mat-card-header class="mb-2">
+  <mat-card-title>
+    <a [routerLink]="['./', opcion]">
+      {{opcion | titlecase}}
+    </a>
+  </mat-card-title>
+</mat-card-header>
+</mat-card>

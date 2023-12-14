@@ -1,3 +1,25 @@
-<p>
-  mostrar works!
-</p>
+
+<ng-container *ngIf="mostrar; else elseTemplate">
+  <mat-card class="m-5" *ngFor="let item of mostrar" >
+    <mat-card-header>
+      <mat-card-title><span *ngIf="item.tipo">{{item.tipo}} - </span>{{item.nombre}}</mat-card-title>
+      <mat-card-subtitle> {{item.direccion}} - {{item.poblacion}}<span *ngIf="item.pais" > - {{item.pais}}</span></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngIf="item.todoElDia" >
+      <p>
+        24h
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="flex justify-content-between	">
+      <button mat-button>
+        <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star_border"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star"></mat-icon>
+      </button>
+      <a href="{{item.gMaps}}" target="_blank">Cómo llegar</a>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
+
+<ng-template #elseTemplate>
+  <shared-spinner></shared-spinner>
+</ng-template>
