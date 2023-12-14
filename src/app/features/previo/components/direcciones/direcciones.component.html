@@ -1,17 +1,17 @@
-<ng-container *ngIf="playa; else elseTemplate">
-  <mat-card class="m-5">
+
+<ng-container *ngIf="direcciones; else elseTemplate">
+  <mat-card class="m-5" *ngFor="let direccion of direcciones" >
     <mat-card-header>
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title>{{playa.nombre}}</mat-card-title>
-      <mat-card-subtitle>
-         <!-- {{playa.direccion}} -->
-         <img class="max-h-5rem md:max-h-full" matCardImage src="{{playa.imagen}}">
-        </mat-card-subtitle>
+      <mat-card-title>{{direccion.nombre}}</mat-card-title>
+      <mat-card-subtitle> {{direccion.direccion}} </mat-card-subtitle>
     </mat-card-header>
     <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
     <mat-card-content>
       <p>
-        {{playa.descripcion}}
+      Coordenadas GPS:
+      Latitud: {{direccion.localizacion.latitud}}
+      Longitud: {{direccion.localizacion.longitud}}
       </p>
     </mat-card-content>
     <mat-card-actions class="flex justify-content-between	">
@@ -19,12 +19,12 @@
         <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star_border"></mat-icon>
         <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star"></mat-icon>
       </button>
-      <a href="{{playa.gMaps}}" target="_blank">Como llegar</a>
+      <a href="{{direccion.enlaceGoogleMaps}}" target="_blank">Como llegar</a>
     </mat-card-actions>
   </mat-card>
-
 </ng-container>
-
 <ng-template #elseTemplate>
   <shared-spinner></shared-spinner>
+
 </ng-template>
+

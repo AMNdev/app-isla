@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./previo.component.css']
 })
 export class PrevioComponent {
+  public lista: string[] = [
+    'direcciones',
+    'normas'
+  ]
 
 }

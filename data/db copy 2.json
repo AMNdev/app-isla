@@ -1,6 +1,7 @@
 {
   "restaurantes": [
     {
+      "id": "ElRinconcito",
       "nombre": "El Rinconcito",
       "direccion": "Calle de la Paz, Madrid",
       "link": "www.elrinconcito.com",
@@ -8,6 +9,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+de+la+Paz,+Madrid"
     },
     {
+      "id": "LaTrattoria",
       "nombre": "La Trattoria",
       "direccion": "Avenida Italia, Barcelona",
       "link": "www.latrattoria.com",
@@ -15,6 +17,7 @@
       "gMaps": "https://www.google.com/maps/place/Avenida+Italia,+Barcelona"
     },
     {
+      "id": "SushiFusion",
       "nombre": "Sushi Fusion",
       "direccion": "Calle Sushi, Valencia",
       "link": "www.sushifusion-valencia.com",
@@ -22,6 +25,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+Sushi,+Valencia"
     },
     {
+      "id": "BurgerHeaven",
       "nombre": "Burger Heaven",
       "direccion": "Plaza de las Hamburguesas, Sevilla",
       "link": "www.burgerheaven-sevilla.com",
@@ -29,6 +33,7 @@
       "gMaps": "https://www.google.com/maps/place/Plaza+de+las+Hamburguesas,+Sevilla"
     },
     {
+      "id": "PastaParadiso",
       "nombre": "Pasta Paradiso",
       "direccion": "Calle de la Pasta, Zaragoza",
       "link": "www.pastaparadiso-zaragoza.com",
@@ -36,6 +41,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+de+la+Pasta,+Zaragoza"
     },
     {
+      "id": "VeggieDelight",
       "nombre": "Veggie Delight",
       "direccion": "Avenida Verde, Bilbao",
       "link": "www.veggiedelight-bilbao.com",
@@ -43,6 +49,7 @@
       "gMaps": "https://www.google.com/maps/place/Avenida+Verde,+Bilbao"
     },
     {
+      "id": "sCatch",
       "nombre": "Fisherman's Catch",
       "direccion": "Paseo del Pescador, Málaga",
       "link": "www.fishermanscatch-malaga.com",
@@ -50,6 +57,7 @@
       "gMaps": "https://www.google.com/maps/place/Paseo+del+Pescador,+Málaga"
     },
     {
+      "id": "WokWonders",
       "nombre": "Wok Wonders",
       "direccion": "Calle del Wok, Alicante",
       "link": "www.wokwonders-alicante.com",
@@ -57,6 +65,7 @@
       "gMaps": "https://www.google.com/maps/place/Calle+del+Wok,+Alicante"
     },
     {
+      "id": "SteakhouseSupreme",
       "nombre": "Steakhouse Supreme",
       "direccion": "Carrera de las Carnes, Murcia",
       "link": "www.steakhousesupreme-murcia.com",
@@ -64,6 +73,7 @@
       "gMaps": "https://www.google.com/maps/place/Carrera+de+las+Carnes,+Murcia"
     },
     {
+      "id": "SweetTemptations",
       "nombre": "Sweet Temptations",
       "direccion": "Calle de los Postres, Granada",
       "link": "www.sweettemptations-granada.com",
@@ -71,95 +81,117 @@
       "gMaps": "https://www.google.com/maps/place/Calle+de+los+Postres,+Granada"
     }
   ],
-  "info": {
-    "piso": {
+  "info": [
+    {
+      "id": "piso",
+      "resumen": "aqui ponemos un resumen no muy largo sobre el piso",
       "descripcion": [
         "Este es un piso turístico encantador en el corazón de la ciudad.",
-        "Con impresionantes vistas y comodidades modernas, te sentirás como en casa."
+        "Con impresionantes vistas y comodidades modernas, te sentirás como en casa.",
+        "mas texto"
       ],
       "video": [
-        "https://www.youtube.com/watch?v=video1",
-        "https://www.youtube.com/watch?v=video2"
-      ]
-    },
-    "instrucciones": [{
-      "aparato": "Televisor",
-      "descripcion": [
-        "Enciende el televisor usando el control remoto.",
-        "Selecciona el canal deseado.",
-        "Ajusta el volumen según tu preferencia."
-      ],
-      "video": [
-        "https://www.youtube.com/watch?v=tv-instructions"
-      ],
-      "imagenes": [
-        "url_de_imagen_tv_1.jpg",
-        "url_de_imagen_tv_2.jpg"
+        {
+          "descripcion": "descripcion video 1",
+          "videoUrl": "https://www.youtube.com/embed/h2ec5kDOBaY?si=_S9p01QNiSqQEtaS"
+        },
+        {
+          "descripcion": "descripcion video 2",
+          "videoUrl": "https://www.youtube.com/embed/h2ec5kDOBaY?si=_S9p01QNiSqQEtaS"
+        }
       ]
     },
     {
-      "aparato": "butano",
-      "descripcion": [
-        "El piso utiliza bombonas de butano para la cocina y la calefacción.",
-        "Si necesitas cambiar la bombona, sigue estos pasos:"
-      ],
-      "video": [
-        "https://www.youtube.com/watch?v=butano-instructions"
-      ],
-      "imagenes": [
-        "url_de_img_butano_1.jpg",
-        "url_de_img_butano_2.jpg"
+      "id": "instrucciones",
+      "aparatos": [
+        {
+          "aparato": "Televisor",
+          "descripcion": [
+            "Enciende el televisor usando el control remoto.",
+            "Selecciona el canal deseado.",
+            "Ajusta el volumen según tu preferencia."
+          ],
+          "video": [
+            "https://www.youtube.com/embed/v=tv-instructions"
+          ],
+          "imagenes": [
+            "https://picsum.photos/180",
+            "https://picsum.photos/180"
+          ]
+        },
+        {
+          "aparato": "Calentador de agua",
+          "descripcion": [
+            "El piso utiliza bombonas de butano para calentar el agua",
+            "Si necesitas cambiar la bombona, sigue estos pasos:"
+          ],
+          "video": [
+            "https://www.youtube.com/watch?v=butano-instructions"
+          ],
+          "imagenes": [
+            "https://picsum.photos/180",
+            "https://picsum.photos/180"
+          ]
+        }
       ]
-    }]
-  },
+    }
+  ],
   "playas": [
     {
+      "id": "central",
       "nombre": "Playa Central",
       "descripcion": "Una playa amplia y popular con arena fina y aguas cristalinas.",
       "gMaps": "https://www.google.com/maps/place/Playa+Central,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_central.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "losPescadores",
       "nombre": "Playa de los Pescadores",
       "descripcion": "Una encantadora playa junto al puerto, ideal para relajarse y disfrutar del paisaje marino.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+los+Pescadores,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_pescadores.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "deIslantilla",
       "nombre": "Playa de Islantilla",
       "descripcion": "Una extensa playa con dunas y áreas naturales, perfecta para largos paseos junto al mar.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+Islantilla,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_islantilla.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "delHoyo",
       "nombre": "Playa del Hoyo",
       "descripcion": "Una playa más tranquila, alejada del bullicio, con aguas claras y ambiente sereno.",
       "gMaps": "https://www.google.com/maps/place/Playa+del+Hoyo,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_hoyo.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "CasitaAzul",
       "nombre": "Playa de la Casita Azul",
       "descripcion": "Una pequeña playa con encanto, ideal para aquellos que buscan tranquilidad y belleza escénica.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+la+Casita+Azul,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_casita_azul.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "dorada",
       "nombre": "Playa Dorada",
       "descripcion": "Una playa de arenas doradas y aguas cristalinas, perfecta para disfrutar del sol y el mar.",
       "gMaps": "https://www.google.com/maps/place/Playa+Dorada,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_dorada.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "losCorales",
       "nombre": "Playa de los Corales",
       "descripcion": "Una playa con arrecifes de corales, ideal para la práctica de snorkel y buceo.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+los+Corales,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_corales.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "delSol",
       "nombre": "Playa del Sol",
       "descripcion": "Una playa soleada con extensas áreas para tomar el sol y disfrutar de actividades playeras.",
       "gMaps": "https://www.google.com/maps/place/Playa+del+Sol,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_sol.jpg"
+      "imagen": "https://picsum.photos/180"
     }
   ],
   "tiendas": [
@@ -168,7 +200,10 @@
       "tipo": "Supermercado",
       "direccion": "Calle Principal, 123",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2097, "longitud": -7.3169 },
+      "coordenadas": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
@@ -176,7 +211,10 @@
       "tipo": "Electrónicos",
       "direccion": "Avenida Secundaria, 456",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2135, "longitud": -7.3184 },
+      "coordenadas": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     },
     {
@@ -184,7 +222,10 @@
       "tipo": "Supermercado",
       "direccion": "Carretera Principal, 789",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2144, "longitud": -7.4041 },
+      "coordenadas": {
+        "latitud": 37.2144,
+        "longitud": -7.4041
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
     },
     {
@@ -192,7 +233,10 @@
       "tipo": "Ropa",
       "direccion": "Calle Secundaria, 101",
       "poblacion": "Lepe",
-      "coordenadas": { "latitud": 37.2577, "longitud": -7.2099 },
+      "coordenadas": {
+        "latitud": 37.2577,
+        "longitud": -7.2099
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
     },
     {
@@ -200,7 +244,10 @@
       "tipo": "Juguetes",
       "direccion": "Avenida Principal, 222",
       "poblacion": "Ayamonte",
-      "coordenadas": { "latitud": 37.2622, "longitud": -6.9495 },
+      "coordenadas": {
+        "latitud": 37.2622,
+        "longitud": -6.9495
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
     }
   ],
@@ -210,7 +257,10 @@
       "direccion": "Calle Principal, 123",
       "poblacion": "Isla Cristina",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2097, "longitud": -7.3169 },
+      "coordenadas": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169",
       "todoElDia": true
     },
@@ -219,7 +269,10 @@
       "direccion": "Avenida Secundaria, 456",
       "poblacion": "Isla Cristina",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2135, "longitud": -7.3184 },
+      "coordenadas": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184",
       "todoElDia": false
     },
@@ -228,7 +281,10 @@
       "direccion": "Carretera Principal, 789",
       "poblacion": "Ayamonte",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2144, "longitud": -7.4041 },
+      "coordenadas": {
+        "latitud": 37.2144,
+        "longitud": -7.4041
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041",
       "todoElDia": true
     },
@@ -237,7 +293,10 @@
       "direccion": "Calle Secundaria, 101",
       "poblacion": "Lepe",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2577, "longitud": -7.2099 },
+      "coordenadas": {
+        "latitud": 37.2577,
+        "longitud": -7.2099
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099",
       "todoElDia": false
     },
@@ -246,7 +305,10 @@
       "direccion": "Avenida Principal, 222",
       "poblacion": "Huelva",
       "pais": "España",
-      "coordenadas": { "latitud": 37.2622, "longitud": -6.9495 },
+      "coordenadas": {
+        "latitud": 37.2622,
+        "longitud": -6.9495
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495",
       "todoElDia": true
     }
@@ -257,7 +319,10 @@
       "tipo": "Farmacia",
       "direccion": "Calle Principal, 123",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2097, "longitud": -7.3169 },
+      "coordenadas": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
@@ -265,7 +330,10 @@
       "tipo": "Hospital",
       "direccion": "Avenida Secundaria, 456",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2135, "longitud": -7.3184 },
+      "coordenadas": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     },
     {
@@ -273,7 +341,10 @@
       "tipo": "Centro de Salud",
       "direccion": "Carretera Principal, 789",
       "poblacion": "Isla Cristina",
-      "coordenadas": { "latitud": 37.2144, "longitud": -7.4041 },
+      "coordenadas": {
+        "latitud": 37.2144,
+        "longitud": -7.4041
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2144,-7.4041"
     },
     {
@@ -281,7 +352,10 @@
       "tipo": "Farmacia",
       "direccion": "Calle Secundaria, 101",
       "poblacion": "Lepe",
-      "coordenadas": { "latitud": 37.2577, "longitud": -7.2099 },
+      "coordenadas": {
+        "latitud": 37.2577,
+        "longitud": -7.2099
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2577,-7.2099"
     },
     {
@@ -289,7 +363,10 @@
       "tipo": "Centro de Salud",
       "direccion": "Avenida Principal, 222",
       "poblacion": "Ayamonte",
-      "coordenadas": { "latitud": 37.2622, "longitud": -6.9495 },
+      "coordenadas": {
+        "latitud": 37.2622,
+        "longitud": -6.9495
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2622,-6.9495"
     }
   ],
@@ -307,15 +384,23 @@
   ],
   "direcciones": [
     {
+      "id" : "piso",
       "nombre": "Mi Piso Turístico",
       "direccion": "Calle Principal, 123",
-      "localizacion": { "latitud": 37.2097, "longitud": -7.3169 },
+      "localizacion": {
+        "latitud": 37.2097,
+        "longitud": -7.3169
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
+      "id":"garaje",
       "nombre": "Mi Garaje",
       "direccion": "Calle Secundaria, 456",
-      "localizacion": { "latitud": 37.2135, "longitud": -7.3184 },
+      "localizacion": {
+        "latitud": 37.2135,
+        "longitud": -7.3184
+      },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     }
   ]

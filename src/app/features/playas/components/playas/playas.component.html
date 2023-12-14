@@ -1,1 +1,20 @@
-<p>playas works!</p>
+<ng-container *ngIf="playas.length>0; else elseTemplate">
+  <mat-card *ngFor="let playa of playas  " class="item flex justify-content-around align-items-center shadow-3 m-4">
+    <mat-card-header class="mb-2">
+      <mat-card-title>
+        <a [routerLink]="['./', playa.id]">
+          {{playa.nombre}}
+        </a>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <p class="text-center">{{playa.descripcion}}</p>
+    </mat-card-content>
+
+    <img class="max-h-5rem md:max-h-full" matCardImage src="{{playa.imagen}}">
+  </mat-card>
+</ng-container>
+<ng-template #elseTemplate>
+  <shared-spinner></shared-spinner>
+</ng-template>

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrevioComponent } from './components/previo/previo.component';
-import { MostrarComponent } from './components/mostrar/mostrar.component';
+import { NormasComponent } from './components/normas/normas.component';
+import { DireccionesComponent } from './components/direcciones/direcciones.component';
 
 
 const routes: Routes = [
@@ -10,8 +11,12 @@ const routes: Routes = [
     component: PrevioComponent
   },
   {
-    path: ':id',
-    component: MostrarComponent
+    path: 'normas',
+    component: NormasComponent
+  },
+  {
+    path: 'direcciones',
+    component: DireccionesComponent
   }
 
 ]

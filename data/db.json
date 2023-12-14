@@ -138,52 +138,60 @@
   ],
   "playas": [
     {
+      "id": "central",
       "nombre": "Playa Central",
       "descripcion": "Una playa amplia y popular con arena fina y aguas cristalinas.",
       "gMaps": "https://www.google.com/maps/place/Playa+Central,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_central.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "losPescadores",
       "nombre": "Playa de los Pescadores",
       "descripcion": "Una encantadora playa junto al puerto, ideal para relajarse y disfrutar del paisaje marino.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+los+Pescadores,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_pescadores.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "deIslantilla",
       "nombre": "Playa de Islantilla",
       "descripcion": "Una extensa playa con dunas y áreas naturales, perfecta para largos paseos junto al mar.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+Islantilla,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_islantilla.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "delHoyo",
       "nombre": "Playa del Hoyo",
       "descripcion": "Una playa más tranquila, alejada del bullicio, con aguas claras y ambiente sereno.",
       "gMaps": "https://www.google.com/maps/place/Playa+del+Hoyo,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_hoyo.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "CasitaAzul",
       "nombre": "Playa de la Casita Azul",
       "descripcion": "Una pequeña playa con encanto, ideal para aquellos que buscan tranquilidad y belleza escénica.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+la+Casita+Azul,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_casita_azul.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "dorada",
       "nombre": "Playa Dorada",
       "descripcion": "Una playa de arenas doradas y aguas cristalinas, perfecta para disfrutar del sol y el mar.",
       "gMaps": "https://www.google.com/maps/place/Playa+Dorada,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_dorada.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "losCorales",
       "nombre": "Playa de los Corales",
       "descripcion": "Una playa con arrecifes de corales, ideal para la práctica de snorkel y buceo.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+los+Corales,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_corales.jpg"
+      "imagen": "https://picsum.photos/180"
     },
     {
+      "id": "delSol",
       "nombre": "Playa del Sol",
       "descripcion": "Una playa soleada con extensas áreas para tomar el sol y disfrutar de actividades playeras.",
       "gMaps": "https://www.google.com/maps/place/Playa+del+Sol,+Isla+Cristina",
-      "imagen": "url_de_la_imagen_playa_sol.jpg"
+      "imagen": "https://picsum.photos/180"
     }
   ],
   "tiendas": [
@@ -376,6 +384,7 @@
   ],
   "direcciones": [
     {
+      "id" : "piso",
       "nombre": "Mi Piso Turístico",
       "direccion": "Calle Principal, 123",
       "localizacion": {
@@ -385,6 +394,7 @@
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2097,-7.3169"
     },
     {
+      "id":"garaje",
       "nombre": "Mi Garaje",
       "direccion": "Calle Secundaria, 456",
       "localizacion": {
