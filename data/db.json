@@ -418,5 +418,37 @@
       },
       "enlaceGoogleMaps": "https://www.google.com/maps/place/37.2135,-7.3184"
     }
+  ],
+  "turismo" : [
+    {
+      "id": "ayto",
+      "nombre": "ayuntamiento",
+      "descripcion": "web de turismo oficial",
+      "direccion": "Calle Principal, 123",
+      "gMaps" : "https://www.google.com/maps/place/37.2097,-7.3169"
+    },
+    {
+      "id": "oficina",
+      "nombre": "Oficina de Turismo",
+      "descripcion": "Información turística local",
+      "direccion": "Avenida Turística, 456",
+      "gMaps" : "https://www.google.com/maps/place/37.2135,-7.3184"
+    },
+    {
+      "id": "cultural",
+      "nombre": "Museo Histórico",
+      "descripcion": "Explora nuestra historia y cultura",
+      "direccion": "Plaza Cultural, 789",
+      "gMaps" : "https://www.google.com/maps/place/37.2144,-7.4041"
+    },
+    {
+      "id": "informacion",
+      "nombre": "Centro de Información Local",
+      "descripcion": "Obtén datos útiles sobre la ciudad",
+      "direccion": "Calle de Información, 101",
+      "gMaps" : "https://www.google.com/maps/place/37.2577,-7.2099"
+    }
+
+
   ]
 }

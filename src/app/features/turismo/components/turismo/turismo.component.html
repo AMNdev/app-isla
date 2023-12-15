@@ -1,1 +1,22 @@
-<p>turismo works!</p>
+<ng-container *ngIf="turismo.length>0; else elseTemplate">
+  <mat-card *ngFor="let item of turismo" class="item flex justify-content-around align-items-center shadow-3 m-4">
+
+    <mat-card-header class="mb-2">
+      <mat-card-title>{{item.nombre}}</mat-card-title>
+      <mat-card-subtitle>{{item.descripcion}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <p class="text-center">{{item.direccion}}</p>
+    </mat-card-content>
+    
+    <a href="{{item.gMaps}}" target="_blank">Como llegar</a>
+  </mat-card>
+</ng-container>
+
+
+<ng-template #elseTemplate>
+  <shared-spinner></shared-spinner>
+</ng-template>
