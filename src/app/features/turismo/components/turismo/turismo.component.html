@@ -1,21 +1,25 @@
 <ng-container *ngIf="turismo.length>0; else elseTemplate">
-  <mat-card *ngFor="let item of turismo" class="item flex justify-content-around align-items-center shadow-3 m-4">
+  <div class="grid p-3">
+    <div *ngFor="let item of turismo" class="col-12 md:col-6 lg:col-3">
 
-    <mat-card-header class="mb-2">
-      <mat-card-title>{{item.nombre}}</mat-card-title>
-      <mat-card-subtitle>{{item.descripcion}}</mat-card-subtitle>
-    </mat-card-header>
+      <mat-card class=" align-items-center shadow-3">
+        <mat-card-header class="mb-2">
+          <mat-card-title>{{item.nombre}}</mat-card-title>
+          <mat-card-subtitle>{{item.descripcion}}</mat-card-subtitle>
+        </mat-card-header>
 
-    <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
 
-    <mat-card-content>
-      <p class="text-center">{{item.direccion}}</p>
-    </mat-card-content>
-    
-    <a href="{{item.gMaps}}" target="_blank">Como llegar</a>
-  </mat-card>
+        <mat-card-content>
+          <p class="text-center">{{item.direccion}}</p>
+        </mat-card-content>
+
+        <a href="{{item.gMaps}}" target="_blank">Como llegar</a>
+      </mat-card>
+    </div>
+  </div>
 </ng-container>
-
+<!-- TODO: maquetar en pestañas -->
 
 <ng-template #elseTemplate>
   <shared-spinner></shared-spinner>

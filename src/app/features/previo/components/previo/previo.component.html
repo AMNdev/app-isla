@@ -1,10 +1,52 @@
-  <mat-card *ngFor="let item of lista  "
-    class="item flex justify-content-around align-items-center shadow-3 m-4">
-    <mat-card-header class="mb-2">
-      <mat-card-title>
-        <a [routerLink]="['./', item]">
-          {{item |  titlecase }}
-        </a>
-      </mat-card-title>
-    </mat-card-header>
-  </mat-card>
+<mat-tab-group [disableRipple]="false">
+
+  <mat-tab label="Direcciones">
+
+    <ng-container *ngIf="direcciones; else elseTemplate">
+      <div class="grid p-3  align-items-center mt-3 ">
+
+        <div *ngFor="let direccion of direcciones" class="col-12 md:col-6">
+          <mat-card class="shadow-3">
+            <mat-card-header>
+              <mat-card-title>{{direccion.nombre}}</mat-card-title>
+              <mat-card-subtitle> {{direccion.direccion}} </mat-card-subtitle>
+            </mat-card-header>
+            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+            <mat-card-content>
+              <p>
+                Coordenadas GPS:
+                Latitud: {{direccion.localizacion.latitud}}
+                Longitud: {{direccion.localizacion.longitud}}
+              </p>
+            </mat-card-content>
+            <!-- <shared-favoritos></shared-favoritos> -->
+
+            <mat-card-actions class="flex justify-content-between	">
+              <a href="{{direccion.enlaceGoogleMaps}}" target="_blank">Como llegar</a>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <shared-spinner></shared-spinner>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="Normas">
+
+    <ng-container *ngIf="normas; else elseTemplate">
+      <div class="p-5  mt-3 ">
+        <mat-card class="" *ngFor="let norma of normas">
+          <mat-card-content>
+            <mat-card-title>{{norma}}</mat-card-title>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
+
+    <ng-template #elseTemplate>
+      <shared-spinner></shared-spinner>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

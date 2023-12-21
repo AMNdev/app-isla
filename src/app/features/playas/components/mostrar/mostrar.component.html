@@ -1,24 +1,24 @@
 <ng-container *ngIf="playa; else elseTemplate">
+
   <mat-card class="m-5">
     <mat-card-header>
-      <!-- <div mat-card-avatar class="example-header-image"></div> -->
       <mat-card-title>{{playa.nombre}}</mat-card-title>
       <mat-card-subtitle>
          <!-- {{playa.direccion}} -->
-         <img class="max-h-5rem md:max-h-full" matCardImage src="{{playa.imagen}}">
+         <img class="max-h-10rem" matCardImage src="{{playa.imagen}}">
         </mat-card-subtitle>
     </mat-card-header>
-    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+
     <mat-card-content>
       <p>
         {{playa.descripcion}}
       </p>
     </mat-card-content>
+
+    <!-- <shared-favoritos></shared-favoritos> -->
+
     <mat-card-actions class="flex justify-content-between	">
-      <button mat-button>
-        <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star_border"></mat-icon>
-        <mat-icon aria-hidden="false" aria-label="  icon" fontIcon="star"></mat-icon>
-      </button>
+
       <a href="{{playa.gMaps}}" target="_blank">Como llegar</a>
     </mat-card-actions>
   </mat-card>

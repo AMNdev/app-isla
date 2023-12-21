@@ -142,35 +142,35 @@
       "nombre": "Playa Central",
       "descripcion": "Una playa amplia y popular con arena fina y aguas cristalinas.",
       "gMaps": "https://www.google.com/maps/place/Playa+Central,+Isla+Cristina",
-      "imagen": "https://picsum.photos/180"
+      "imagen": "https://picsum.photos/220"
     },
     {
       "id": "losPescadores",
       "nombre": "Playa de los Pescadores",
       "descripcion": "Una encantadora playa junto al puerto, ideal para relajarse y disfrutar del paisaje marino.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+los+Pescadores,+Isla+Cristina",
-      "imagen": "https://picsum.photos/180"
+      "imagen": "https://picsum.photos/220"
     },
     {
       "id": "deIslantilla",
       "nombre": "Playa de Islantilla",
       "descripcion": "Una extensa playa con dunas y áreas naturales, perfecta para largos paseos junto al mar.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+Islantilla,+Isla+Cristina",
-      "imagen": "https://picsum.photos/180"
+      "imagen": "https://picsum.photos/220"
     },
     {
       "id": "delHoyo",
       "nombre": "Playa del Hoyo",
       "descripcion": "Una playa más tranquila, alejada del bullicio, con aguas claras y ambiente sereno.",
       "gMaps": "https://www.google.com/maps/place/Playa+del+Hoyo,+Isla+Cristina",
-      "imagen": "https://picsum.photos/180"
+      "imagen": "https://picsum.photos/220"
     },
     {
       "id": "CasitaAzul",
       "nombre": "Playa de la Casita Azul",
       "descripcion": "Una pequeña playa con encanto, ideal para aquellos que buscan tranquilidad y belleza escénica.",
       "gMaps": "https://www.google.com/maps/place/Playa+de+la+Casita+Azul,+Isla+Cristina",
-      "imagen": "https://picsum.photos/180"
+      "imagen": "https://picsum.photos/220"
     },
     {
       "id": "dorada",

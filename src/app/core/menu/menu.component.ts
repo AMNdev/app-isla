@@ -8,32 +8,32 @@ import { Component } from '@angular/core';
 export class MenuComponent {
   public featuresList = [
     {
-      feature_name: 'comer',
-      link: 'comer',
-      image: 'https://picsum.photos/180',
-    },
-    {
-      feature_name: 'info',
-      link: 'info',
-      image: 'https://picsum.photos/180',
-    },
-    {
-      feature_name: 'playas',
-      image: 'https://picsum.photos/180',
-      link: 'playas',
-    },
-    {
-      feature_name: 'previo',
+      feature_name: 'Antes de llegar',
       link: 'previo',
       image: 'https://picsum.photos/180',
     },
     {
-      feature_name: 'turismo',
+      feature_name: 'El apartamento',
+      link: 'info',
+      image: 'https://picsum.photos/180',
+    },
+    {
+      feature_name: 'Dónde comer',
+      link: 'comer',
+      image: 'https://picsum.photos/180',
+    },
+    {
+      feature_name: 'Playas',
+      image: 'https://picsum.photos/180',
+      link: 'playas',
+    },
+    {
+      feature_name: 'Turismo',
       link: 'turismo',
       image: 'https://picsum.photos/180',
     },
     {
-      feature_name: 'otros',
+      feature_name: 'Información útil',
       link: 'otros',
       image: 'https://picsum.photos/180',
     },

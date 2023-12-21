@@ -5,6 +5,7 @@ import { MenuCardComponent } from './components/menu-card/menu-card.component';
 import { MaterialModule } from '../material/material.module';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { VideoContainerComponent } from './components/video-container/video-container.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
 
 
 
@@ -13,6 +14,7 @@ import { VideoContainerComponent } from './components/video-container/video-cont
     MenuCardComponent,
     SpinnerComponent,
     VideoContainerComponent,
+    FavoritosComponent,
 
    ],
   imports: [
@@ -23,6 +25,7 @@ import { VideoContainerComponent } from './components/video-container/video-cont
     MenuCardComponent,
     SpinnerComponent,
     VideoContainerComponent,
+    FavoritosComponent,
 
   ]
 })

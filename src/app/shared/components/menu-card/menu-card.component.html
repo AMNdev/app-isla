@@ -1,10 +1,10 @@
-<mat-card class="item flex flex-row justify-content-around align-items-center shadow-3">
+<mat-card class=" flex flex-row justify-content-between align-items-center shadow-3">
   <mat-card-header>
     <mat-card-title>
       <a class="appearance-none" href="{{feature!.link}}">
-        {{feature?.feature_name}}
+        {{feature?.feature_name | titlecase}}
       </a>
     </mat-card-title>
   </mat-card-header>
-  <img class="max-h-5rem md:max-h-full" matCardImage src="{{feature!.image}}">
+  <img class="right-0 max-h-5rem md:max-h-full" matCardImage src="{{feature!.image}}">
 </mat-card>

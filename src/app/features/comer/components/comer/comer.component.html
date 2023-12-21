@@ -1,18 +1,22 @@
 <ng-container *ngIf="restaurants.length>0; else elseTemplate">
-  <mat-card *ngFor="let restaurant of restaurants  "
-    class="item flex justify-content-around align-items-center shadow-3 m-4">
-    <mat-card-header class="mb-2">
-      <mat-card-title>
-        <a [routerLink]="['./', restaurant.id]">
-          {{restaurant.nombre}}
-        </a>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <p class="text-center">{{restaurant.descripcion}}</p>
-    </mat-card-content>
-  </mat-card>
+  <div class="grid p-3">
+
+    <div *ngFor="let restaurant of restaurants" class="col-12 md:col-6 lg:col-4">
+
+      <mat-card class=" align-items-center shadow-3">
+        <mat-card-header class="mb-2">
+          <mat-card-title>
+            <a [routerLink]="['./', restaurant.id]">
+              {{restaurant.nombre}}
+            </a>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-center">{{restaurant.descripcion}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </ng-container>
 
 
