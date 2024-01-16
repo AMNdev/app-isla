@@ -6,6 +6,7 @@ import { MaterialModule } from '../material/material.module';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { VideoContainerComponent } from './components/video-container/video-container.component';
 import { FavoritosComponent } from './components/favoritos/favoritos.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { FavoritosComponent } from './components/favoritos/favoritos.component';
    ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
     MenuCardComponent,

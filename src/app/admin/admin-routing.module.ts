@@ -8,17 +8,21 @@ import { OtrosAdminComponent } from './components/otros-admin/otros-admin.compon
 import { PlayasAdminComponent } from './components/playas-admin/playas-admin.component';
 import { PrevioAdminComponent } from './components/previo-admin/previo-admin.component';
 import { TurismoAdminComponent } from './components/turismo-admin/turismo-admin.component';
+import { LayoutPageComponent } from './components/layout-page/layout-page.component';
 
 const routes: Routes = [
-  { path: 'comer', component: ComerAdminComponent },
-  { path: 'info', component: InfoAdminComponent },
-  { path: 'otros', component: OtrosAdminComponent },
-  { path: 'playas', component: PlayasAdminComponent },
-  { path: 'previo', component: PrevioAdminComponent },
-  { path: 'turismo', component: TurismoAdminComponent },
   {
     path: '',
-    component: AdminMenuComponent,
+    component: LayoutPageComponent,
+    children: [
+      { path: '', component: AdminMenuComponent },
+      { path: 'comer', component: ComerAdminComponent },
+      { path: 'info', component: InfoAdminComponent },
+      { path: 'otros', component: OtrosAdminComponent },
+      { path: 'playas', component: PlayasAdminComponent },
+      { path: 'previo', component: PrevioAdminComponent },
+      { path: 'turismo', component: TurismoAdminComponent },
+    ],
   },
 ];
 
