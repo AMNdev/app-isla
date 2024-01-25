@@ -6,16 +6,17 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/material/material.module';
 
 
-
 @NgModule({
-  declarations: [
-    PrevioComponent,
-  ],
+  declarations: [PrevioComponent],
   imports: [
     CommonModule,
     PrevioRoutingModule,
     SharedModule,
     MaterialModule,
+
+  ],
+  exports: [
+    
   ]
 })
-export class PrevioModule { }
+export class PrevioModule {}

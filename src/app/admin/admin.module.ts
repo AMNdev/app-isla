@@ -11,6 +11,9 @@ import { PlayasAdminComponent } from './components/playas-admin/playas-admin.com
 import { PrevioAdminComponent } from './components/previo-admin/previo-admin.component';
 import { SharedModule } from '../shared/shared.module';
 import { TurismoAdminComponent } from './components/turismo-admin/turismo-admin.component';
+import { MaterialModule } from '../material/material.module';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { TurismoAdminComponent } from './components/turismo-admin/turismo-admin.
     AdminRoutingModule,
     CommonModule,
     SharedModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 })
 export class AdminModule {}
