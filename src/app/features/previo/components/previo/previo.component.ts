@@ -22,7 +22,8 @@ export class PrevioComponent {
     });
     this.data.getNormas().subscribe((normas) => {
       if (!normas) return this.router.navigateByUrl('./');
-      this.normas = normas;
+      // this.normas = normas;
+      // fixme: arreglar la recepcion de las normas y mostrar correctamente
       return;
     });
   }

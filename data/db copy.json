@@ -386,35 +386,18 @@
     }
   ],
   "normas": [
-    {
-      "id": 3,
-      "norma": "Evitar el desperdicio de agua y energía."
-    },
-    {
-      "id": 4,
-      "norma": "Mantener la limpieza y orden en las áreas comunes."
-    },
-    {
-      "id": 5,
-      "norma": "No se permiten fiestas ni eventos en el piso."
-    },
-    {
-      "id": 7,
-      "norma": "Dejar las llaves en la recepción al hacer el check-out."
-    },
-    {
-      "id": 8,
-      "norma": "Informar inmediatamente cualquier problema o avería."
-    },
-    {
-      "id": 9,
-      "norma": "Seguir las normativas locales de seguridad."
-    },
-    {
-      "id": 10,
-      "norma": "Cerrar ventanas y puertas al salir del piso."
-    }
+    {"id": 1, "norma": "Respetar el horario de silencio de 22:00 a 08:00."},
+    {"id": 2, "norma": "No está permitido fumar dentro del piso."},
+    {"id": 3, "norma": "Evitar el desperdicio de agua y energía."},
+    {"id": 4, "norma": "Mantener la limpieza y orden en las áreas comunes."},
+    {"id": 5, "norma": "No se permiten fiestas ni eventos en el piso."},
+    {"id": 6, "norma": "No se admiten mascotas."},
+    {"id": 7, "norma": "Dejar las llaves en la recepción al hacer el check-out."},
+    {"id": 8, "norma": "Informar inmediatamente cualquier problema o avería."},
+    {"id": 9, "norma": "Seguir las normativas locales de seguridad."},
+    {"id": 10, "norma": "Cerrar ventanas y puertas al salir del piso."}
   ],
+
   "direcciones": [
     {
       "id": "piso",

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Localizacion } from 'src/app/shared/interfaces/previo.interface';
+import { Localizacion, Norma } from 'src/app/shared/interfaces/previo.interface';
 import { environments } from 'src/environments/environments.prod';
 
 @Injectable({
@@ -16,7 +16,19 @@ export class PrevioService {
     return this.http.get<Localizacion[]>(`${this.baseUrl}/direcciones`);
   }
 
-  getNormas(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseUrl}/normas`);
+  getNormas(): Observable<Norma[]> {
+    return this.http.get<Norma[]>(`${this.baseUrl}/normas`);
+  }
+
+  deleteNorma(toDelete: Norma) {
+    console.log(`Borrando - id: ${toDelete.id}, ${toDelete.norma}`)
+    return this.http.delete(`${this.baseUrl}/normas/${toDelete.id}`).subscribe(
+      // TODO: notificar el borrado de la norma al usuario (matdialog o algo mejor?)
+    )
+
+  }
+  setNormas(normas:any) {
+    return this.http.post(`${this.baseUrl}/normas`, normas)
+    // TODO: crear bien el método, añadiendo id unico, autogenerado o definido por usuario (añadir campo de posicion para que sea dispuesto en el orden deseado?)
   }
 }

@@ -5,7 +5,10 @@ import { Router } from '@angular/router';
 import { MatTable } from '@angular/material/table';
 
 import { PrevioService } from 'src/app/features/previo/previo.service';
-import { Localizacion } from 'src/app/shared/interfaces/previo.interface';
+import {
+  Localizacion,
+  Norma,
+} from 'src/app/shared/interfaces/previo.interface';
 
 @Component({
   selector: 'app-previo-admin',
@@ -17,7 +20,7 @@ export class PrevioAdminComponent {
 
   // public isFormVisible: boolean = false;
   public direcciones!: Localizacion[];
-  public normas!: string[];
+  public normas!: Norma[];
   public nuevaNorma: string = '';
 
   public displayedColumns = [
@@ -38,34 +41,35 @@ export class PrevioAdminComponent {
     enlaceNuevo: new FormControl(''),
   });
 
-
   constructor(private data: PrevioService, private router: Router) {}
 
   ngOnInit() {
     this.data.getDirecciones().subscribe((direcciones) => {
-      if (!direcciones) return this.router.navigateByUrl('./');
+      // if (!direcciones) return this.router.navigateByUrl('./');
       this.direcciones = direcciones;
       return;
     });
     this.data.getNormas().subscribe((normas) => {
-      if (!normas) return this.router.navigateByUrl('./');
+      // if (!normas) return this.router.navigateByUrl('./');
       this.normas = normas;
       return;
     });
   }
   // TODO: cambiar alerts por mat dialog
+
   // --- NORMAS ---
-  // TODO: hacer new set de las normas para asegurar elementos unicos
-  deleteRule(norma: string) {
+
+  deleteRule(norma: Norma) {
     console.log('Eliminando: ', norma);
     if (
       confirm(`¿Desea eliminar la siguiente norma?
 
-    "${norma}"`)
-    )
-      this.normas = this.normas.filter((x) => x != norma);
-
-    // todo: eliminar de la bd
+    "${norma.norma}"`)
+    ) {
+      this.normas = this.normas.filter((x) => x.id != norma.id);
+      // console.log(this.normas)
+      this.data.deleteNorma(norma);
+    }
   }
 
   saveRule() {
@@ -78,7 +82,12 @@ export class PrevioAdminComponent {
       "${this.nuevaNorma}"`
       )
     ) {
-      this.normas.push(this.nuevaNorma);
+      // this.normas.push(this.nuevaNorma);
+
+      this.normas = [...new Set(this.normas)];
+
+      console.log(this.normas);
+
       this.nuevaNorma = '';
     }
 
@@ -87,14 +96,9 @@ export class PrevioAdminComponent {
 
   // --- DIRECCIONES ---
 
-
-
-  editDirection(x: any) {
-    // TODO: crear lógica de  editar (pasar datos al form)
-    console.log(x);
-  }
-
-
+  // editDirection(x: any) {
+  //   console.log(x);
+  // }
 
   delete(toDelete: Localizacion) {
     console.log(toDelete);

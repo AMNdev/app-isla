@@ -8,3 +8,9 @@ export interface Localizacion {
   localizacion: Coordenadas;
   enlaceGoogleMaps: string;
 }
+
+export interface Norma {
+  id: number;
+  norma: string;
+}
+
