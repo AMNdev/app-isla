@@ -6,8 +6,8 @@
       <mat-list role="list" class="w-auto mat-elevation-z8">
         <mat-list-item role="listitem" *ngFor="let norma of normas">
           <div class="flex flex-row ">
-            <p mat-input class="flex-1 my-auto">{{norma.id}} - {{norma.norma}}
-              <!-- TODO: mostrar correctamente las normas -->
+            <mat-icon class=" my-auto">info</mat-icon>
+            <p mat-input class="flex-1 my-auto">&nbsp;{{norma.norma}}
             <p>
               <button mat-stroked-button color="warn" (click)="deleteRule(norma)">Eliminar</button>
           </div>
@@ -16,11 +16,12 @@
         <mat-list-item role="listitem">
           <div class="w-full">
             <mat-form-field class="w-full mt-5">
-              <input class="w-full" matInput type="text" placeholder="Introducir nueva norma" [(ngModel)]="nuevaNorma">
-              <button *ngIf="nuevaNorma" matSuffix mat-icon-button aria-label="Clear" (click)="nuevaNorma=''">
+              <input class="w-full" matInput type="text" placeholder="Introducir nueva norma"
+                [(ngModel)]="nuevaNormaInput" (keydown)="trackEnter($event)">
+              <button *ngIf="nuevaNormaInput" matSuffix mat-icon-button aria-label="Clear" (click)="nuevaNormaInput=''">
                 <mat-icon>close</mat-icon>
               </button>
-              <button *ngIf="nuevaNorma" matSuffix mat-icon-button aria-label="Clear" (click)="saveRule()">
+              <button *ngIf="nuevaNormaInput" matSuffix mat-icon-button aria-label="Clear" (click)="saveRule()">
                 <mat-icon>save</mat-icon>
               </button>
             </mat-form-field>

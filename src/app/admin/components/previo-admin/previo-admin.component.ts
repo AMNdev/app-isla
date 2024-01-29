@@ -21,7 +21,7 @@ export class PrevioAdminComponent {
   // public isFormVisible: boolean = false;
   public direcciones!: Localizacion[];
   public normas!: Norma[];
-  public nuevaNorma: string = '';
+  public nuevaNormaInput: string = '';
 
   public displayedColumns = [
     'id',
@@ -73,25 +73,25 @@ export class PrevioAdminComponent {
   }
 
   saveRule() {
-    console.log('Añadiendo: ', this.nuevaNorma);
     if (
-      this.nuevaNorma.length > 0 &&
+      this.nuevaNormaInput.length > 0 &&
       confirm(
         `¿Desea añadir la siguiente norma?
 
-      "${this.nuevaNorma}"`
+      "${this.nuevaNormaInput}"`
       )
     ) {
-      // this.normas.push(this.nuevaNorma);
-
+      // find first free id
+      const freeId = this.findFreeId();
+      const normaEnviar: Norma = {
+        id: freeId,
+        norma: this.nuevaNormaInput,
+      };
+      this.data.setNormas(normaEnviar);
+      this.normas.push(normaEnviar);
       this.normas = [...new Set(this.normas)];
-
-      console.log(this.normas);
-
-      this.nuevaNorma = '';
+      this.nuevaNormaInput = '';
     }
-
-    // todo: añadir a la bd
   }
 
   // --- DIRECCIONES ---
@@ -131,5 +131,20 @@ export class PrevioAdminComponent {
     f.resetForm();
 
     // TODO: añadir a la BD
+  }
+
+  findFreeId(): number {
+    let usedIds: number[] = [];
+    this.normas.forEach((item) => {
+      usedIds.push(item.id);
+    });
+    for (let i = 0; i < usedIds.length; i++) {
+      if (!usedIds.includes(i + 1)) return i + 1;
+    }
+    return usedIds.length + 1;
+  }
+
+  trackEnter(x: KeyboardEvent) {
+    if (x.code == 'Enter') this.saveRule();
   }
 }
