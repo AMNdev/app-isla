@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import {
   Localizacion,
   Norma,
@@ -19,30 +19,43 @@ export class PrevioService {
   constructor(private http: HttpClient) {}
 
   getDirecciones(): Observable<Localizacion[]> {
-    return this.http.get<Localizacion[]>(`${this.baseUrl}/direcciones`);
+    return this.http.get<Localizacion[]>(`${this.baseUrl}/direcciones`).pipe(
+      catchError((err) => {
+        alert('Error de carga');
+        console.log(err);
+        return of([]);
+      })
+    );
   }
 
   getNormas(): Observable<Norma[]> {
-    return this.http.get<Norma[]>(`${this.baseUrl}/normas`);
+    return this.http.get<Norma[]>(`${this.baseUrl}/normas`).pipe(
+      catchError((err) => {
+        alert('Error de carga');
+        console.log(err);
+        return of([]);
+      })
+    );
   }
 
   deleteNorma(toDelete: Norma) {
     console.log(`Borrando - id: ${toDelete.id}, ${toDelete.norma}`);
-    return this.http.delete(`${this.baseUrl}/normas/${toDelete.id}`).subscribe(
-      // TODO: notificar el borrado de la norma al usuario (matdialog o algo mejor?)
-      () => {
-        alert(`eliminada con éxito`);
-      }
+    return this.http.delete(`${this.baseUrl}/normas/${toDelete.id}`).pipe(
+      catchError((err) => {
+        console.log(err);
+        return of('error');
+      })
     );
+    // si falla devuelve [] por el of
+    // si ok, devuelve {}
   }
 
   setNormas(nuevaNorma: Norma) {
-    return this.http
-      .post<Norma>(`${this.baseUrl}/normas`, nuevaNorma)
-      .subscribe((resp) => {
-        alert(`Norma creada con éxito:
-        ${resp.id} - ${resp.norma}`);
-      });
+    return this.http.post<Norma>(`${this.baseUrl}/normas`, nuevaNorma).pipe(
+      catchError((err) => {
+        console.log(err);
+        return of({ id: 0, norma: 'error' });
+      })
+    );
   }
-  // TODO: manejar los errores
 }

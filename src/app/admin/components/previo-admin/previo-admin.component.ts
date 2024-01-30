@@ -45,17 +45,15 @@ export class PrevioAdminComponent {
 
   ngOnInit() {
     this.data.getDirecciones().subscribe((direcciones) => {
-      // if (!direcciones) return this.router.navigateByUrl('./');
       this.direcciones = direcciones;
-      return;
     });
+
     this.data.getNormas().subscribe((normas) => {
-      // if (!normas) return this.router.navigateByUrl('./');
       this.normas = normas;
-      return;
     });
   }
   // TODO: cambiar alerts por mat dialog
+  // TODO: cambiar confirms por mat dialog
 
   // --- NORMAS ---
 
@@ -66,13 +64,21 @@ export class PrevioAdminComponent {
 
     "${norma.norma}"`)
     ) {
-      this.normas = this.normas.filter((x) => x.id != norma.id);
-      // console.log(this.normas)
-      this.data.deleteNorma(norma);
+      this.data.deleteNorma(norma).subscribe(
+        (resp) => {
+          if (resp === 'error') {
+            alert('Error eliminando norma');
+            return;
+          }
+          alert(`eliminada con éxito`);
+          this.normas = this.normas.filter((x) => x.id != norma.id);
+        }
+      );
     }
   }
 
   saveRule() {
+    // fixme: habría que trasladar toda esta lógica al servicio
     if (
       this.nuevaNormaInput.length > 0 &&
       confirm(
@@ -81,16 +87,22 @@ export class PrevioAdminComponent {
       "${this.nuevaNormaInput}"`
       )
     ) {
-      // find first free id
-      const freeId = this.findFreeId();
       const normaEnviar: Norma = {
-        id: freeId,
+        id: this.findFreeId(),
         norma: this.nuevaNormaInput,
       };
-      this.data.setNormas(normaEnviar);
-      this.normas.push(normaEnviar);
-      this.normas = [...new Set(this.normas)];
-      this.nuevaNormaInput = '';
+
+      this.data.setNormas(normaEnviar).subscribe((resp) => {
+        if (resp.id == 0 && resp.norma == 'error') {
+          alert('error creando norma');
+          return;
+        }
+        alert(`Norma creada con éxito:
+          ${resp.id} - ${resp.norma}`);
+
+        this.normas.push(normaEnviar);
+        this.nuevaNormaInput = '';
+      });
     }
   }
 
@@ -141,7 +153,8 @@ export class PrevioAdminComponent {
     for (let i = 0; i < usedIds.length; i++) {
       if (!usedIds.includes(i + 1)) return i + 1;
     }
-    return usedIds.length + 1;
+    const newId = usedIds.length + 1;
+    return newId;
   }
 
   trackEnter(x: KeyboardEvent) {
