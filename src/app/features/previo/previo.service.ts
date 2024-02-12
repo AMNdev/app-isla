@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, of, throwError } from 'rxjs';
 import {
   Localizacion,
   Norma,
@@ -39,14 +39,13 @@ export class PrevioService {
   }
 
   deleteNorma(toDelete: Norma) {
-    console.log(`Borrando - id: ${toDelete.id}, ${toDelete.norma}`);
     return this.http.delete(`${this.baseUrl}/normas/${toDelete.id}`).pipe(
       catchError((err) => {
         console.log(err);
         return of('error');
       })
     );
-    // si falla devuelve [] por el of
+    // si falla devuelve 'error' por el of
     // si ok, devuelve {}
   }
 
@@ -58,4 +57,27 @@ export class PrevioService {
       })
     );
   }
+
+
+  setNewAddress(newAddress:Localizacion) {
+
+    return this.http.post<Localizacion>(`${this.baseUrl}/direcciones`, newAddress).pipe(
+      catchError((err) => {
+        console.error(err)
+        return throwError(()=>new Error())
+      })
+    );
+  }
+
+  deleteAddress(toDelete: Localizacion) {
+    return this.http.delete(`${this.baseUrl}/direcciones/${toDelete.id}`).pipe(
+      catchError((err) => {
+        console.error(err);
+        return throwError(()=>new Error())
+      })
+    );
+
+  }
 }
+// todo: reformular la gestión de errores
+

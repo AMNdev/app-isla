@@ -58,27 +58,23 @@ export class PrevioAdminComponent {
   // --- NORMAS ---
 
   deleteRule(norma: Norma) {
-    console.log('Eliminando: ', norma);
     if (
       confirm(`¿Desea eliminar la siguiente norma?
 
     "${norma.norma}"`)
     ) {
-      this.data.deleteNorma(norma).subscribe(
-        (resp) => {
-          if (resp === 'error') {
-            alert('Error eliminando norma');
-            return;
-          }
-          alert(`eliminada con éxito`);
-          this.normas = this.normas.filter((x) => x.id != norma.id);
+      this.data.deleteNorma(norma).subscribe((resp) => {
+        if (resp === 'error') {
+          alert('Error eliminando norma');
+          return;
         }
-      );
+        alert(`eliminada con éxito`);
+        this.normas = this.normas.filter((x) => x.id != norma.id);
+      });
     }
   }
 
   saveRule() {
-    // fixme: habría que trasladar toda esta lógica al servicio
     if (
       this.nuevaNormaInput.length > 0 &&
       confirm(
@@ -108,41 +104,59 @@ export class PrevioAdminComponent {
 
   // --- DIRECCIONES ---
 
-  // editDirection(x: any) {
-  //   console.log(x);
-  // }
+   delete(toDelete: Localizacion) {
+    if (
+      confirm(`¿Desea eliminar la siguiente dirección?
 
-  delete(toDelete: Localizacion) {
-    console.log(toDelete);
-    // TODO: añadir confirmacion por matdialog
+      "${toDelete.id}"`)
+      ) {
+      this.data.deleteAddress(toDelete).subscribe({
+        next: ()=> {
+          this.direcciones = this.direcciones.filter(
+            (item) => JSON.stringify(item) != JSON.stringify(toDelete))
+            this.table.renderRows();
+              alert(`eliminada con éxito`);
+        },
+        error: ()=>
+              alert('Error eliminando norma')
+        ,
+      });
 
-    this.direcciones = this.direcciones.filter(
-      (item) => JSON.stringify(item) != JSON.stringify(toDelete)
-    );
+    }
   }
+  // TODO: añadir confirmacion por matdialog
+
+  // TODO: reformular la gestión de errores con next y error en el subscribe
+
+
 
   // toggleForm() {
-  //   this.isFormVisible = !this.isFormVisible;
+    //   this.isFormVisible = !this.isFormVisible;
   // }
 
-  onSubmit(f: FormGroupDirective) {
+  onSubmitAddress(f: FormGroupDirective) {
+    const formData = this.newPlace.value;
     const newDirection: Localizacion = {
-      id: this.newPlace.value.idNuevo!,
-      nombre: this.newPlace.value.nombreNuevo!,
-      direccion: this.newPlace.value.direccionNuevo!,
+      id: formData.idNuevo!,
+      nombre: formData.nombreNuevo!,
+      direccion: formData.direccionNuevo!,
       localizacion: {
-        latitud: +this.newPlace.value.latitudNuevo!,
-        longitud: +this.newPlace.value.longitudNuevo!,
+        latitud: +formData.latitudNuevo!,
+        longitud: +formData.longitudNuevo!,
       },
-      enlaceGoogleMaps: this.newPlace.value.enlaceNuevo!,
+      enlaceGoogleMaps: formData.enlaceNuevo!,
     };
 
-    this.direcciones.push(newDirection);
-    this.table.renderRows();
-    this.newPlace.reset();
-    f.resetForm();
-
-    // TODO: añadir a la BD
+    this.data.setNewAddress(newDirection).subscribe({
+      next: (resp: Localizacion) => {
+        this.direcciones.push(resp);
+        f.resetForm();
+        this.newPlace.reset();
+        this.table.renderRows();
+        alert('Añadida con éxito');
+      },
+      error: () => alert(`Error inesperado`),
+    });
   }
 
   findFreeId(): number {

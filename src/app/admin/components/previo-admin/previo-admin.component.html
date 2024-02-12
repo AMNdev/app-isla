@@ -1,5 +1,5 @@
 <mat-tab-group class="w-full">
-  <mat-tab label="Normas">
+  <!-- <mat-tab label="Normas">
 
     <div class="p-5">
       <mat-list role="list" class="w-auto mat-elevation-z8">
@@ -29,7 +29,7 @@
 
       </mat-list>
     </div>
-  </mat-tab>
+  </mat-tab> -->
 
   <mat-tab label="Direcciones">
 
@@ -97,7 +97,7 @@
 
     <div class="px-5 mb-5">
 
-      <form [formGroup]="newPlace" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" class=" w-full">
+      <form [formGroup]="newPlace" (ngSubmit)="f.form.valid && onSubmitAddress(f)" #f="ngForm" class=" w-full">
 
         <mat-form-field>
           <mat-label>Identificador</mat-label>
