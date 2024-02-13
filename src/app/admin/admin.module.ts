@@ -13,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 import { TurismoAdminComponent } from './components/turismo-admin/turismo-admin.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
     PlayasAdminComponent,
     PrevioAdminComponent,
     TurismoAdminComponent,
+    DialogComponent
   ],
   imports: [
     AdminRoutingModule,

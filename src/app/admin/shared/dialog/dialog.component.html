@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>{{data.title || '¡Atención!'}}</h1>
+
+<div mat-dialog-content>{{data.text || '¿Desea confirmar la acción?'}}</div>
+
+<div mat-dialog-actions>
+  <button mat-button cdkFocusInitial (click)="onNoClick()">Cancelar</button>
+  <button mat-button mat-dialog-close=true>Aceptar</button>
+</div>

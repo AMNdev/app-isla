@@ -14,3 +14,7 @@ export interface Norma {
   norma: string;
 }
 
+export interface DialogData {
+  title: string
+  text: string;
+}

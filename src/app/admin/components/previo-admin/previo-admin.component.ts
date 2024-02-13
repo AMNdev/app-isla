@@ -1,10 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, FormGroupDirective } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, FormGroupDirective } from '@angular/forms';
 
 import { MatTable } from '@angular/material/table';
 
 import { PrevioService } from 'src/app/features/previo/previo.service';
+import { ModalService } from '../../services/modal.service';
+
 import {
   Localizacion,
   Norma,
@@ -41,60 +43,61 @@ export class PrevioAdminComponent {
     enlaceNuevo: new FormControl(''),
   });
 
-  constructor(private data: PrevioService, private router: Router) {}
+  constructor(
+    private data: PrevioService,
+    private router: Router,
+    private modals: ModalService
+  ) {}
 
   ngOnInit() {
-    this.data.getDirecciones().subscribe((direcciones) => {
+    // TODO: reformular la gestión de errores con next y error en el subscribe
+    // TODO: y añadir snackbars y dialogs
+  this.data.getDirecciones().subscribe((direcciones) => {
       this.direcciones = direcciones;
     });
-
     this.data.getNormas().subscribe((normas) => {
       this.normas = normas;
     });
   }
-  // TODO: cambiar alerts por mat dialog
-  // TODO: cambiar confirms por mat dialog
 
-  // --- NORMAS ---
+  // ** --- NORMAS ---
 
   deleteRule(norma: Norma) {
-    if (
-      confirm(`¿Desea eliminar la siguiente norma?
-
-    "${norma.norma}"`)
-    ) {
-      this.data.deleteNorma(norma).subscribe((resp) => {
-        if (resp === 'error') {
-          alert('Error eliminando norma');
-          return;
+  // TODO: reformular la gestión de errores con next y error en el subscribe
+    // Pedir confirmación
+    this.modals
+      .openDialog('¿Desea eliminar la siguiente norma?', norma.norma)
+      .subscribe((confirmation) => {
+        if (confirmation) {
+          // Eliminar la norma
+          this.data.deleteNorma(norma).subscribe((resp) => {
+            if (resp === 'error') {
+              this.modals.openSnackBar('Error eliminando norma');
+              return;
+            }
+            this.modals.openSnackBar('Norma eliminada correctamente');
+            this.normas = this.normas.filter((x) => x.id != norma.id);
+          });
         }
-        alert(`eliminada con éxito`);
-        this.normas = this.normas.filter((x) => x.id != norma.id);
       });
-    }
   }
 
   saveRule() {
-    if (
-      this.nuevaNormaInput.length > 0 &&
-      confirm(
-        `¿Desea añadir la siguiente norma?
-
-      "${this.nuevaNormaInput}"`
-      )
-    ) {
+    if (this.nuevaNormaInput.length > 0) {
       const normaEnviar: Norma = {
         id: this.findFreeId(),
         norma: this.nuevaNormaInput,
       };
+  // TODO: reformular la gestión de errores con next y error en el subscribe
 
       this.data.setNormas(normaEnviar).subscribe((resp) => {
         if (resp.id == 0 && resp.norma == 'error') {
-          alert('error creando norma');
+          this.modals.openSnackBar('Error creando norma');
           return;
         }
-        alert(`Norma creada con éxito:
-          ${resp.id} - ${resp.norma}`);
+        this.modals.openSnackBar(
+          `Norma creada con éxito: ${resp.id} - ${resp.norma}`
+        );
 
         this.normas.push(normaEnviar);
         this.nuevaNormaInput = '';
@@ -102,36 +105,32 @@ export class PrevioAdminComponent {
     }
   }
 
-  // --- DIRECCIONES ---
+  // ** --- DIRECCIONES ---
 
-   delete(toDelete: Localizacion) {
-    if (
-      confirm(`¿Desea eliminar la siguiente dirección?
-
-      "${toDelete.id}"`)
-      ) {
-      this.data.deleteAddress(toDelete).subscribe({
-        next: ()=> {
-          this.direcciones = this.direcciones.filter(
-            (item) => JSON.stringify(item) != JSON.stringify(toDelete))
-            this.table.renderRows();
-              alert(`eliminada con éxito`);
-        },
-        error: ()=>
-              alert('Error eliminando norma')
-        ,
+  delete(toDelete: Localizacion) {
+    // Pedir confirmación
+    this.modals
+      .openDialog('¿Desea eliminar la siguiente localización?', toDelete.nombre)
+      .subscribe((confirmation) => {
+        if (confirmation) {
+          // Eliminación
+          this.data.deleteAddress(toDelete).subscribe({
+            next: () => {
+              this.direcciones = this.direcciones.filter(
+                (item) => JSON.stringify(item) != JSON.stringify(toDelete)
+              );
+              this.table.renderRows();
+              this.modals.openSnackBar(`Localización eliminada correctamente.`);
+            },
+            error: () => this.modals.openSnackBar('Error eliminando norma'),
+          });
+        }
       });
-
-    }
   }
-  // TODO: añadir confirmacion por matdialog
-
-  // TODO: reformular la gestión de errores con next y error en el subscribe
-
 
 
   // toggleForm() {
-    //   this.isFormVisible = !this.isFormVisible;
+  //   this.isFormVisible = !this.isFormVisible;
   // }
 
   onSubmitAddress(f: FormGroupDirective) {
@@ -153,9 +152,10 @@ export class PrevioAdminComponent {
         f.resetForm();
         this.newPlace.reset();
         this.table.renderRows();
-        alert('Añadida con éxito');
+
+        this.modals.openSnackBar('Localización añadida correctamente');
       },
-      error: () => alert(`Error inesperado`),
+      error: () => this.modals.openSnackBar('Error añadiendo localización'),
     });
   }
 

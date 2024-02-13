@@ -21,7 +21,6 @@ export class PrevioService {
   getDirecciones(): Observable<Localizacion[]> {
     return this.http.get<Localizacion[]>(`${this.baseUrl}/direcciones`).pipe(
       catchError((err) => {
-        alert('Error de carga');
         console.log(err);
         return of([]);
       })

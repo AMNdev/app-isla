@@ -393,14 +393,6 @@
     {
       "id": 2,
       "norma": "no mear en las escaleras"
-    },
-    {
-      "id": 3,
-      "norma": "´klj´kj"
-    },
-    {
-      "id": 5,
-      "norma": "mememe"
     }
   ],
   "direcciones": [
@@ -425,11 +417,11 @@
       "enlaceGoogleMaps": "fuuuuu"
     },
     {
-      "id": "ouy",
-      "nombre": "iuy",
-      "direccion": "iuy",
+      "id": "765",
+      "nombre": "765",
+      "direccion": "765",
       "localizacion": {
-        "latitud": 876,
+        "latitud": 765,
         "longitud": 765
       },
       "enlaceGoogleMaps": "765"
