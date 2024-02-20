@@ -50,33 +50,32 @@ export class PrevioAdminComponent {
   ) {}
 
   ngOnInit() {
-    // TODO: reformular la gestión de errores con next y error en el subscribe
-    // TODO: y añadir snackbars y dialogs
-  this.data.getDirecciones().subscribe((direcciones) => {
-      this.direcciones = direcciones;
-    });
-    this.data.getNormas().subscribe((normas) => {
-      this.normas = normas;
-    });
+    this.getDirecciones();
+    this.getNormas();
   }
 
   // ** --- NORMAS ---
 
+  getNormas() {
+    this.data.getNormas().subscribe({
+      next: (normas) => (this.normas = normas),
+      error: (err) => this.modals.openSnackBar(err),
+    });
+  }
+
   deleteRule(norma: Norma) {
-  // TODO: reformular la gestión de errores con next y error en el subscribe
     // Pedir confirmación
     this.modals
       .openDialog('¿Desea eliminar la siguiente norma?', norma.norma)
       .subscribe((confirmation) => {
         if (confirmation) {
           // Eliminar la norma
-          this.data.deleteNorma(norma).subscribe((resp) => {
-            if (resp === 'error') {
-              this.modals.openSnackBar('Error eliminando norma');
-              return;
-            }
-            this.modals.openSnackBar('Norma eliminada correctamente');
-            this.normas = this.normas.filter((x) => x.id != norma.id);
+          this.data.deleteNorma(norma).subscribe({
+            next: () => {
+              this.modals.openSnackBar('Norma eliminada correctamente');
+              this.normas = this.normas.filter((x) => x.id != norma.id);
+            },
+            error: (err) => this.modals.openSnackBar(err),
           });
         }
       });
@@ -88,24 +87,28 @@ export class PrevioAdminComponent {
         id: this.findFreeId(),
         norma: this.nuevaNormaInput,
       };
-  // TODO: reformular la gestión de errores con next y error en el subscribe
 
-      this.data.setNormas(normaEnviar).subscribe((resp) => {
-        if (resp.id == 0 && resp.norma == 'error') {
-          this.modals.openSnackBar('Error creando norma');
-          return;
-        }
-        this.modals.openSnackBar(
-          `Norma creada con éxito: ${resp.id} - ${resp.norma}`
-        );
-
-        this.normas.push(normaEnviar);
-        this.nuevaNormaInput = '';
+      this.data.setNormas(normaEnviar).subscribe({
+        next: (resp) => {
+          this.modals.openSnackBar(
+            `Norma creada con éxito: ${resp.id} - ${resp.norma}`
+          );
+          this.normas.push(normaEnviar);
+          this.nuevaNormaInput = '';
+        },
+        error: (err) => this.modals.openSnackBar(err),
       });
     }
   }
 
   // ** --- DIRECCIONES ---
+
+  getDirecciones() {
+    this.data.getDirecciones().subscribe({
+      next: (direcciones) => (this.direcciones = direcciones),
+      error: (err) => this.modals.openSnackBar(err),
+    });
+  }
 
   delete(toDelete: Localizacion) {
     // Pedir confirmación
@@ -122,12 +125,11 @@ export class PrevioAdminComponent {
               this.table.renderRows();
               this.modals.openSnackBar(`Localización eliminada correctamente.`);
             },
-            error: () => this.modals.openSnackBar('Error eliminando norma'),
+            error: (err) => this.modals.openSnackBar(err),
           });
         }
       });
   }
-
 
   // toggleForm() {
   //   this.isFormVisible = !this.isFormVisible;
@@ -155,11 +157,12 @@ export class PrevioAdminComponent {
 
         this.modals.openSnackBar('Localización añadida correctamente');
       },
-      error: () => this.modals.openSnackBar('Error añadiendo localización'),
+      error: (err) => this.modals.openSnackBar(err),
     });
   }
 
   findFreeId(): number {
+    if (this.normas.length == 0) return 0;
     let usedIds: number[] = [];
     this.normas.forEach((item) => {
       usedIds.push(item.id);

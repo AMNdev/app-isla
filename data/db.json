@@ -393,6 +393,10 @@
     {
       "id": 2,
       "norma": "no mear en las escaleras"
+    },
+    {
+      "id": 3,
+      "norma": "dfsdfpokipo"
     }
   ],
   "direcciones": [
@@ -415,16 +419,6 @@
         "longitud": 888
       },
       "enlaceGoogleMaps": "fuuuuu"
-    },
-    {
-      "id": "765",
-      "nombre": "765",
-      "direccion": "765",
-      "localizacion": {
-        "latitud": 765,
-        "longitud": 765
-      },
-      "enlaceGoogleMaps": "765"
     }
   ],
   "turismo": [

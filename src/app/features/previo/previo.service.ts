@@ -21,8 +21,8 @@ export class PrevioService {
   getDirecciones(): Observable<Localizacion[]> {
     return this.http.get<Localizacion[]>(`${this.baseUrl}/direcciones`).pipe(
       catchError((err) => {
-        console.log(err);
-        return of([]);
+        console.error(err);
+        return throwError(() => new Error('Error recibiendo direcciones'));
       })
     );
   }
@@ -30,9 +30,8 @@ export class PrevioService {
   getNormas(): Observable<Norma[]> {
     return this.http.get<Norma[]>(`${this.baseUrl}/normas`).pipe(
       catchError((err) => {
-        alert('Error de carga');
-        console.log(err);
-        return of([]);
+        console.error(err);
+        return throwError(() => new Error('Error recibiendo normas'));
       })
     );
   }
@@ -41,42 +40,37 @@ export class PrevioService {
     return this.http.delete(`${this.baseUrl}/normas/${toDelete.id}`).pipe(
       catchError((err) => {
         console.log(err);
-        return of('error');
+        return throwError(() => new Error('Error eliminando norma'));
       })
     );
-    // si falla devuelve 'error' por el of
-    // si ok, devuelve {}
   }
 
   setNormas(nuevaNorma: Norma) {
     return this.http.post<Norma>(`${this.baseUrl}/normas`, nuevaNorma).pipe(
       catchError((err) => {
-        console.log(err);
-        return of({ id: 0, norma: 'error' });
+        console.error(err);
+        return throwError(() => new Error('Error añadiendo norma'));
       })
     );
   }
 
-
-  setNewAddress(newAddress:Localizacion) {
-
-    return this.http.post<Localizacion>(`${this.baseUrl}/direcciones`, newAddress).pipe(
-      catchError((err) => {
-        console.error(err)
-        return throwError(()=>new Error())
-      })
-    );
+  setNewAddress(newAddress: Localizacion) {
+    return this.http
+      .post<Localizacion>(`${this.baseUrl}/direcciones`, newAddress)
+      .pipe(
+        catchError((err) => {
+          console.error(err);
+          return throwError(() => new Error('Error añadiendo localización'));
+        })
+      );
   }
 
   deleteAddress(toDelete: Localizacion) {
     return this.http.delete(`${this.baseUrl}/direcciones/${toDelete.id}`).pipe(
       catchError((err) => {
         console.error(err);
-        return throwError(()=>new Error())
+        return throwError(() => new Error('Error eliminando localización'));
       })
     );
-
   }
 }
-// todo: reformular la gestión de errores
-
