@@ -19,7 +19,7 @@ export class AdminMenuComponent {
     },
     {
       feature_name: 'Dónde comer',
-      link: 'admincomer',
+      link: 'comer',
       image: 'https://picsum.photos/180',
     },
     {
