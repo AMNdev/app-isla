@@ -1,11 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormGroupDirective } from '@angular/forms';
 
 import { MatTable } from '@angular/material/table';
 
 import { PrevioService } from 'src/app/features/previo/previo.service';
-import { ModalService } from '../../services/modal.service';
+import { ModalService } from '../../shared/services/modal.service';
 
 import {
   Localizacion,
@@ -45,7 +44,6 @@ export class PrevioAdminComponent {
 
   constructor(
     private data: PrevioService,
-    private router: Router,
     private modals: ModalService
   ) {}
 

@@ -8,7 +8,7 @@ import {
 } from '@angular/material/snack-bar';
 
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../shared/dialog/dialog.component';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Injectable({
   providedIn: 'root',
