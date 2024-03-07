@@ -180,13 +180,6 @@
       "imagen": "https://picsum.photos/180"
     },
     {
-      "id": "losCorales",
-      "nombre": "Playa de los Corales",
-      "descripcion": "Una playa con arrecifes de corales, ideal para la práctica de snorkel y buceo.",
-      "gMaps": "https://www.google.com/maps/place/Playa+de+los+Corales,+Isla+Cristina",
-      "imagen": "https://picsum.photos/180"
-    },
-    {
       "id": "delSol",
       "nombre": "Playa del Sol",
       "descripcion": "Una playa soleada con extensas áreas para tomar el sol y disfrutar de actividades playeras.",
