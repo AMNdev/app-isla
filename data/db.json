@@ -185,6 +185,13 @@
       "descripcion": "Una playa soleada con extensas áreas para tomar el sol y disfrutar de actividades playeras.",
       "gMaps": "https://www.google.com/maps/place/Playa+del+Sol,+Isla+Cristina",
       "imagen": "https://picsum.photos/180"
+    },
+    {
+      "descripcion": "La nueva playa tiene un arenal de 148 metros con sombrillas, zona de césped, puesto de socorro y vigilancia y acceso al agua para personas con movilidad reducida. Cuenta además con un centro náutico con rampa de entrada y salida de barcos y fondeadero para permitir la práctica de deportes de agua.",
+      "gMaps": "https://maps.app.goo.gl/WdtjL5wgNL1wMJWi6",
+      "id": "pantano",
+      "imagen": "https://media.istockphoto.com/id/832158688/es/foto/playa-fluvial-en-el-lago-de-alqueva-mourao.jpg?s=1024x1024&w=is&k=20&c=FdrxpsFxxZkumsH98lWY5fvUgMszRmyl-jEijl-vPns=",
+      "nombre": "Playa de Alqueva"
     }
   ],
   "tiendas": [
