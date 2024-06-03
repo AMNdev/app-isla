@@ -1,13 +1,14 @@
+
 export interface Instrucciones {
   id: string;
-  aparatos: [
-    {
-      aparato: string;
-      descripcion: string[];
-      video: string[];
-      imagenes: string[];
-    }
-  ];
+  aparatos: [ Aparato ];
+}
+
+export interface Aparato {
+  aparato: string;
+  descripcion: string[];
+  video: string[];
+  imagenes: string[];
 }
 
 export interface Info {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoService } from '../../info.service';
-import { tap } from 'rxjs';
 import { Info } from 'src/app/shared/interfaces/info.interface';
 
 @Component({

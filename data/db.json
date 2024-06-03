@@ -9,6 +9,14 @@
       "gMaps": "https://www.google.com/maps/place/Calle+de+la+Paz,+Madrid"
     },
     {
+      "id": "kakakakakak",
+      "nombre": "El Rinconcito",
+      "direccion": "Calle de la Paz, Madrid",
+      "link": "www.elrinconcito.com",
+      "descripcion": "Un lugar acogedor para disfrutar de la mejor comida mexicana",
+      "gMaps": "https://www.google.com/maps/place/Calle+de+la+Paz,+Madrid"
+    },
+    {
       "id": "LaTrattoria",
       "nombre": "La Trattoria",
       "direccion": "Avenida Italia, Barcelona",
@@ -85,18 +93,14 @@
     {
       "id": "piso",
       "resumen": "aqui ponemos un resumen no muy largo sobre el piso",
-      "descripcion": [
-        "Este es un piso turístico encantador en el corazón de la ciudad.",
-        "Con impresionantes vistas y comodidades modernas, te sentirás como en casa.",
-        "mas texto"
-      ],
+      "descripcion": "Mi piso mola más que ninguno",
       "video": [
         {
-          "descripcion": "descripcion video 1",
+          "descripcion": "descripcion video 3",
           "videoUrl": "https://www.youtube.com/embed/h2ec5kDOBaY?si=_S9p01QNiSqQEtaS"
         },
         {
-          "descripcion": "descripcion video 2",
+          "descripcion": "descripcion video 1",
           "videoUrl": "https://www.youtube.com/embed/h2ec5kDOBaY?si=_S9p01QNiSqQEtaS"
         }
       ]

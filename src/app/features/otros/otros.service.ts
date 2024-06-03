@@ -25,11 +25,11 @@ export class OtrosService {
     return this.http.get<Tiendas>(`${this.baseUrl}/salud`);
   }
 
-  // getRestaurants(): Observable<Restaurante[]>{
-  //   return this.http.get<Restaurante[]>(`${this.baseUrl}/restaurantes`)
-  // }
+  getRestaurants(): Observable<Restaurante[]>{
+    return this.http.get<Restaurante[]>(`${this.baseUrl}/restaurantes`)
+  }
 
-  // getRestaurantById(id: string): Observable<Restaurante> {
-  //   return this.http.get<Restaurante>(`${this.baseUrl}/restaurantes/${id}`)
-  // }
+  getRestaurantById(id: string): Observable<Restaurante> {
+    return this.http.get<Restaurante>(`${this.baseUrl}/restaurantes/${id}`)
+  }
 }
