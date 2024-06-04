@@ -14,6 +14,8 @@ import { TurismoAdminComponent } from './components/turismo-admin/turismo-admin.
 import { MaterialModule } from '../material/material.module';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { DialogComponent } from './shared/dialog/dialog.component';
+import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     PlayasAdminComponent,
     PrevioAdminComponent,
     TurismoAdminComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent
   ],
   imports: [
     AdminRoutingModule,
@@ -34,7 +37,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     SharedModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
 })
 export class AdminModule {}

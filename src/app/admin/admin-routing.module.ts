@@ -9,10 +9,12 @@ import { PlayasAdminComponent } from './components/playas-admin/playas-admin.com
 import { PrevioAdminComponent } from './components/previo-admin/previo-admin.component';
 import { TurismoAdminComponent } from './components/turismo-admin/turismo-admin.component';
 import { LayoutPageComponent } from './components/layout-page/layout-page.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   {
-    path: '',
+    path: 'admin',
     component: LayoutPageComponent,
     children: [
       { path: '', component: AdminMenuComponent },
