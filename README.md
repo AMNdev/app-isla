@@ -19,3 +19,6 @@ npm run start:dev
 cd C:\Programacion\Proyectos-Personales\Isla\appIsla
 npm run start
 ```
+
+* HTTP
+https://documenter.getpostman.com/view/23835018/2sA3Qy79rm

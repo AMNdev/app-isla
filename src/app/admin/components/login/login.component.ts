@@ -42,7 +42,7 @@ export class LoginComponent {
 
     this.loginService.loginUser(this.loginForm.value as Usuario).subscribe({
       next: (resp) => {
-        this.router.navigateByUrl('carmen/admin', { skipLocationChange: true });
+        this.router.navigateByUrl('carmen/admin');
       },
       error: (err) => this.modals.openSnackBar(err),
     });

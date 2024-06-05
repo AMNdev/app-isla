@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from '../guards/auth.guard';
+
 import { AdminMenuComponent } from './components/admin-menu/admin-menu.component';
 import { ComerAdminComponent } from './components/comer-admin/comer-admin.component';
 import { InfoAdminComponent } from './components/info-admin/info-admin.component';
@@ -16,6 +18,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: LayoutPageComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: AdminMenuComponent },
       { path: 'comer', component: ComerAdminComponent },
