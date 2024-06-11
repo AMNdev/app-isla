@@ -15,8 +15,8 @@ export class PlayasComponent implements OnInit {
   ngOnInit(): void {
     console.log('playas component onInit');
 
-    this.data.getPlayas().subscribe((resp) => (this.playas = resp));
+    this.data.getPlayas().subscribe((resp) => (this.playas = resp.playas));
 
-    
+
   }
 }

@@ -19,6 +19,7 @@ export class PlayasAdminComponent implements OnInit {
   @ViewChild(MatTable) table!: MatTable<Playas>;
   public playas!: Playas[];
 
+  // todo: eliminar los datos del input
   public newPlaya = new FormGroup({
     descripcionNuevo: new FormControl(''),
     gMapsNuevo: new FormControl(''),
@@ -47,13 +48,13 @@ export class PlayasAdminComponent implements OnInit {
 
   getPlayas() {
     this.data.getPlayas().subscribe({
-      next: (playas) => (this.playas = playas),
+      next: (playas) => (this.playas = playas.playas),
       error: (err) => this.modals.openSnackBar(err),
     });
   }
 
   setPlaya(f: FormGroupDirective) {
-    // TODO: condicion!!
+    // TODO: condicion!! Qué condición??
     const formData = this.newPlaya.value;
     if (f.form.valid && this.checkUniqueId(formData.idNuevo!)) {
       const playaEnviar: Playas = {
@@ -66,12 +67,12 @@ export class PlayasAdminComponent implements OnInit {
 
       this.data.setPlaya(playaEnviar).subscribe({
         next: (resp) => {
-          this.playas.push(resp);
+          this.playas.push(resp.playas);
           f.resetForm();
           this.newPlaya.reset();
           this.table.renderRows();
           this.modals.openSnackBar(
-            `Playa añadida con éxito: ${resp.id} - ${resp.nombre}`
+            `Playa añadida con éxito: ${resp.playas.nombre} - ${resp.playas.descripcion}`
           );
         },
         error: (err) => this.modals.openSnackBar(err),
@@ -89,7 +90,7 @@ export class PlayasAdminComponent implements OnInit {
           this.data.deletePlaya(playa).subscribe({
             next: () => {
               this.modals.openSnackBar('Playa eliminada correctamente');
-              this.playas = this.playas.filter((x) => x.id != playa.id);
+              this.playas = this.playas.filter((x) => x.uid != playa.uid);
             },
             error: ({ message }) => this.modals.openSnackBar(message),
           });
