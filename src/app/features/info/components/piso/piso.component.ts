@@ -13,6 +13,7 @@ export class PisoComponent implements OnInit {
   constructor(private data: InfoService) {}
 
   ngOnInit() {
-    this.data.getPiso().subscribe((resp) => (this.piso = resp));
+    // this.data.getPiso().subscribe((resp) => (this.piso = resp));
+    // todo: reactivar
   }
 }

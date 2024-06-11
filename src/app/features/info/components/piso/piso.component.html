@@ -1,6 +1,8 @@
 <ng-container *ngIf="piso; else elseTemplate">
   <mat-tab-group>
-    <mat-tab label="{{piso.id | titlecase }}">
+    <mat-tab label="pisod">
+      <!-- todo: colocar tab label correcto -->
+      <!-- <mat-tab label="{{piso.id | titlecase }}"> -->
 
       <mat-card class="m-5">
         <mat-card-header>
@@ -22,7 +24,7 @@
 
       <mat-card *ngFor="let video of piso.video" class="m-5">
         <mat-card-header>
-          <mat-card-title>{{video.descripcion}}</mat-card-title>
+          <mat-card-title>{{video.videoDescripcion}}</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>

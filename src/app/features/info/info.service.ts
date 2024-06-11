@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environments } from 'src/environments/environments';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, tap, throwError } from 'rxjs';
 import {
   Aparato,
+  AparatoRespuesta,
   Info,
   Instrucciones,
   Piso,
+  PisoRespuesta,
 } from 'src/app/shared/interfaces/info.interface';
 
 @Injectable({
@@ -14,13 +16,19 @@ import {
 })
 export class InfoService {
   private baseUrl: string = environments.baseUrl;
+  private token = localStorage.getItem('token') || '';
+  private headers = {
+        headers: {
+          'x-token': this.token,
+        },
+      }
 
   constructor(private http: HttpClient) {}
 
   // obtiene las categorías de información (piso, instrucciones...)
   // FIXME: bastante inútil
   getInfoList(): Observable<Info[]> {
-    return this.http.get<Info[]>(`${this.baseUrl}/info`).pipe(
+    return this.http.get<Info[]>(`${this.baseUrl}/api/info`).pipe(
       catchError((err: Error) => {
         console.error(err.message);
         return throwError(() => new Error('Error recibiendo lista'));
@@ -39,8 +47,9 @@ export class InfoService {
   //   );
   // }
 
-  getPiso(): Observable<Piso> {
-    return this.http.get<Piso>(`${this.baseUrl}/info/piso`).pipe(
+  getPiso(): Observable<PisoRespuesta> {
+    return this.http.get<PisoRespuesta>(`${this.baseUrl}/api/piso`).pipe(
+      // tap((res) => console.log(res)),
       catchError((err: Error) => {
         console.error(err.message);
         return throwError(() => new Error('Error recibiendo piso'));
@@ -50,7 +59,7 @@ export class InfoService {
 
   getInstrucciones(): Observable<Instrucciones> {
     return this.http
-      .get<Instrucciones>(`${this.baseUrl}/info/instrucciones`)
+      .get<Instrucciones>(`${this.baseUrl}/api/instrucciones`)
       .pipe(
         catchError((err: Error) => {
           console.error(err.message);
@@ -61,18 +70,21 @@ export class InfoService {
 
   // setters
   setPiso(nuevoPiso: Piso) {
-    return this.http.put<Piso>(`${this.baseUrl}/info/piso`, nuevoPiso).pipe(
-      catchError((err: Error) => {
-        console.error(err.message);
-        return throwError(() => new Error('Error guardando piso'));
-      })
-    );
+
+    return this.http
+      .put<Piso>(`${this.baseUrl}/api/piso`, nuevoPiso, this.headers)
+      .pipe(
+        catchError((err: Error) => {
+          console.error(err.message);
+          return throwError(() => new Error('Error guardando piso'));
+        })
+      );
   }
 
   // FIXME: esto hay que arreglarlo después de tener claros los endpoints del backend
-  setInstrucciones(nuevaInstruccion: Aparato) {
+  setInstrucciones(nuevaInstruccion: Aparato): Observable<AparatoRespuesta> {
     return this.http
-      .put<Aparato>(`${this.baseUrl}/info/instrucciones`, nuevaInstruccion)
+      .post<AparatoRespuesta>(`${this.baseUrl}/api/instrucciones`, nuevaInstruccion, this.headers)
       .pipe(
         catchError((err: Error) => {
           console.error(err.message);
@@ -82,23 +94,16 @@ export class InfoService {
   }
 
   setAparato(nuevoAparato: Aparato) {
-    console.log('setAparato')
-
-   }
-
-  // deleters
-  deletePiso(toDelete: Piso) {
-    return this.http.delete<Piso>(`${this.baseUrl}/info/${toDelete}`).pipe(
-      catchError((err: Error) => {
-        console.error(err.message);
-        return throwError(() => new Error('Error guardando piso'));
-      })
-    );
+    console.log('setAparato');
   }
 
-  deleteInstrucciones(toDelete:Instrucciones) {
+  // deleters
+
+  deleteInstrucciones(toDelete: Aparato) {
+    console.log({toDelete})
+
     return this.http
-      .delete<Instrucciones>(`${this.baseUrl}/info/instrucciones/${toDelete}`,)
+      .delete<AparatoRespuesta>(`${this.baseUrl}/api/instrucciones/${toDelete.uid}`, this.headers)
       .pipe(
         catchError((err: Error) => {
           console.error(err.message);
