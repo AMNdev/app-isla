@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormGroupDirective } from '@angular/forms';
 
 import { MatTable } from '@angular/material/table';
@@ -7,6 +7,7 @@ import { PrevioService } from 'src/app/features/previo/previo.service';
 import { ModalService } from '../../shared/services/modal.service';
 
 import {
+  ChangeDireccion,
   Localizacion,
   Norma,
 } from 'src/app/shared/interfaces/previo.interface';
@@ -16,7 +17,7 @@ import {
   templateUrl: './previo-admin.component.html',
   styleUrls: ['./previo-admin.component.css'],
 })
-export class PrevioAdminComponent {
+export class PrevioAdminComponent implements OnInit{
   @ViewChild(MatTable) table!: MatTable<Localizacion>;
 
   // public isFormVisible: boolean = false;
@@ -25,27 +26,19 @@ export class PrevioAdminComponent {
   public nuevaNormaInput: string = '';
 
   public displayedColumns = [
-    'id',
     'nombre',
     'direccion',
-    'localizacion',
-    'enlaceGoogleMaps',
+    'gMaps',
     'actions',
   ];
 
   public newPlace = new FormGroup({
-    idNuevo: new FormControl(''),
     nombreNuevo: new FormControl(''),
     direccionNuevo: new FormControl(''),
-    latitudNuevo: new FormControl(''),
-    longitudNuevo: new FormControl(''),
     enlaceNuevo: new FormControl(''),
   });
 
-  constructor(
-    private data: PrevioService,
-    private modals: ModalService
-  ) {}
+  constructor(private data: PrevioService, private modals: ModalService) {}
 
   ngOnInit() {
     this.getDirecciones();
@@ -56,7 +49,7 @@ export class PrevioAdminComponent {
 
   getNormas() {
     this.data.getNormas().subscribe({
-      next: (normas) => (this.normas = normas),
+      next: (normas) => (this.normas = normas.normas),
       error: (err) => this.modals.openSnackBar(err),
     });
   }
@@ -89,7 +82,7 @@ export class PrevioAdminComponent {
       this.data.setNormas(normaEnviar).subscribe({
         next: (resp) => {
           this.modals.openSnackBar(
-            `Norma creada con éxito: ${resp.id} - ${resp.norma}`
+            `Norma creada con éxito: ${resp.norma.id} - ${resp.norma.norma}`
           );
           this.normas.push(normaEnviar);
           this.nuevaNormaInput = '';
@@ -103,7 +96,7 @@ export class PrevioAdminComponent {
 
   getDirecciones() {
     this.data.getDirecciones().subscribe({
-      next: (direcciones) => (this.direcciones = direcciones),
+      next: (resp) => (this.direcciones = resp.direcciones),
       error: (err) => this.modals.openSnackBar(err),
     });
   }
@@ -136,19 +129,14 @@ export class PrevioAdminComponent {
   onSubmitAddress(f: FormGroupDirective) {
     const formData = this.newPlace.value;
     const newDirection: Localizacion = {
-      id: formData.idNuevo!,
       nombre: formData.nombreNuevo!,
       direccion: formData.direccionNuevo!,
-      localizacion: {
-        latitud: +formData.latitudNuevo!,
-        longitud: +formData.longitudNuevo!,
-      },
-      enlaceGoogleMaps: formData.enlaceNuevo!,
+      gMaps: formData.enlaceNuevo!,
     };
 
     this.data.setNewAddress(newDirection).subscribe({
-      next: (resp: Localizacion) => {
-        this.direcciones.push(resp);
+      next: (resp: ChangeDireccion) => {
+        this.direcciones.push(resp.direccion);
         f.resetForm();
         this.newPlace.reset();
         this.table.renderRows();

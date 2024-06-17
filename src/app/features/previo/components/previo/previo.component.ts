@@ -17,11 +17,13 @@ export class PrevioComponent {
   ngOnInit() {
     this.data.getDirecciones().subscribe((direcciones) => {
       if (!direcciones) return this.router.navigateByUrl('./');
-      this.direcciones = direcciones;
+      // todo: reactivar
+      // this.direcciones = direcciones;
       return;
     });
     this.data.getNormas().subscribe((normas) => {
       if (!normas) return this.router.navigateByUrl('./');
+      // todo: reactivar
       // this.normas = normas;
       // fixme: arreglar la recepcion de las normas y mostrar correctamente
       return;

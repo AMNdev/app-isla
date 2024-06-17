@@ -14,6 +14,6 @@ export class ComerComponent implements OnInit {
 
   ngOnInit(): void {
     this.data.getRestaurants()
-      .subscribe(list => this.restaurants=list);
+      .subscribe(list => this.restaurants=list.restaurantes);
   }
 }
