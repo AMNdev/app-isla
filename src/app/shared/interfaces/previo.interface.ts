@@ -1,4 +1,3 @@
-import { Coordenadas } from "./otros.interface";
 
 // Interface para el piso
 export interface GetDirecciones{

@@ -19,11 +19,21 @@ export class ComerService  {
   constructor(private http: HttpClient) { }
 
   getRestaurants(): Observable<GetRestaurantes>{
-    return this.http.get<GetRestaurantes>(`${this.baseUrl}/api/restaurantes`)
+    return this.http.get<GetRestaurantes>(`${this.baseUrl}/api/restaurantes`).pipe(
+      catchError((err) => {
+        console.error(err);
+        return throwError(() => new Error('Error recibiendo restaurantes'));
+      })
+    );
   }
 
   getRestaurantById(id: string): Observable<Restaurante> {
-    return this.http.get<Restaurante>(`${this.baseUrl}/api/restaurantes/${id}`)
+    return this.http.get<Restaurante>(`${this.baseUrl}/api/restaurantes/${id}`).pipe(
+      catchError((err) => {
+        console.error(err);
+        return throwError(() => new Error('Error recibiendo el restaurante'));
+      })
+    );
   }
 
   newRestaurant(venue: Restaurante): Observable<RestauranteRespuesta> {
