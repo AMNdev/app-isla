@@ -12,6 +12,7 @@ import { ModalService } from '../../shared/services/modal.service';
 })
 export class LoginComponent {
   public hide = true;
+  public isLogging = false;
 
   // todo: eliminar correo y contraseña
   public loginForm = this.fb.group({
@@ -36,15 +37,17 @@ export class LoginComponent {
       console.log('Invalid login form');
       return;
     }
-
-    // todo: cambiar por loader, spinner o algo
-    this.modals.openSnackBar('Accediendo...');
-
+    // this.modals.openSnackBar('Accediendo...');
+    this.isLogging = true;
     this.loginService.loginUser(this.loginForm.value as Usuario).subscribe({
       next: (resp) => {
         this.router.navigateByUrl('carmen/admin');
       },
-      error: (err) => this.modals.openSnackBar(err),
+      error: (err) => {
+        this.isLogging = false;
+        this.modals.openSnackBar(err.name)
+        console.error(err)
+      },
     });
   }
 
@@ -61,3 +64,4 @@ export class LoginComponent {
     return '';
   }
 }
+

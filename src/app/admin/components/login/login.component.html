@@ -3,31 +3,37 @@
   <h3 class="flex align-items-center justify-content-center">Acceso de Administración</h3>
   <mat-divider></mat-divider>
 
-  <form (ngSubmit)="login()" [formGroup]="loginForm">
+  <ng-container *ngIf="isLogging; else elseTemplate">
+    <shared-spinner></shared-spinner>
+  </ng-container>
 
-    <div class="flex align-items-center justify-content-center border-round-sm p-2 ">
-      <mat-form-field class="w-full">
-        <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="Introduce email" formControlName="email" required>
-        <mat-error>{{invalidField('email')}}</mat-error>
-      </mat-form-field>
-    </div>
+  <ng-template #elseTemplate>
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
 
-    <div class="flex align-items-center justify-content-center border-round-sm p-2 ">
-      <mat-form-field class="w-full">
-        <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="xxxxxx">
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-        <mat-error>{{invalidField('password')}}</mat-error>
-      </mat-form-field>
-    </div>
+      <div class="flex align-items-center justify-content-center border-round-sm p-2 ">
+        <mat-form-field class="w-full">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="Introduce email" formControlName="email" required>
+          <mat-error>{{invalidField('email')}}</mat-error>
+        </mat-form-field>
+      </div>
 
-    <div class="flex align-items-center justify-content-center border-round-sm p-2">
-      <button class="w-full" mat-stroked-button color="primary" [disabled]="loginForm.invalid">Acceder</button>
-    </div>
+      <div class="flex align-items-center justify-content-center border-round-sm p-2 ">
+        <mat-form-field class="w-full">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="xxxxxx">
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error>{{invalidField('password')}}</mat-error>
+        </mat-form-field>
+      </div>
 
-  </form>
+      <div class="flex align-items-center justify-content-center border-round-sm p-2">
+        <button class="w-full" mat-stroked-button color="primary" [disabled]="loginForm.invalid">Acceder</button>
+      </div>
+
+    </form>
+  </ng-template>
 </div>
