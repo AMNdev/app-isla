@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Turismo } from 'src/app/shared/interfaces/info.interface';
 import { TurismoService } from '../../turismo.service';
+import { Turismo } from 'src/app/shared/interfaces/turismo.interface';
+import { GetTurismo } from '../../../../shared/interfaces/turismo.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-turismo',
@@ -13,8 +15,23 @@ export class TurismoComponent  implements OnInit {
   constructor(private data: TurismoService){}
 
   ngOnInit(): void {
-    this.data.getTurismo().subscribe(resp => this.turismo = resp)
+    // this.data.getTurismo().subscribe(resp => this.turismo = resp)
+
+    this.getTurismo()
+    console.log('turismo component')
+
 
   }
 
+  getTurismo(){
+    this.data.getTurismo().subscribe({
+      next: (resp) => {
+        console.log(resp);
+        this.turismo= resp.turismoItems
+      },
+      error: (err) => console.log(err)
+
+
+    })
+  }
 }
