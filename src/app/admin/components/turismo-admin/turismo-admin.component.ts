@@ -13,7 +13,14 @@ import { ModalService } from '../../shared/services/modal.service';
 export class TurismoAdminComponent implements OnInit {
   @ViewChild(MatTable) table!: MatTable<Turismo>;
   public turismo: Turismo[] = [];
-  columnas = ['nombre', 'direccion', 'link', 'descripcion', 'gMaps', 'actions'];
+  columnas = [
+    'nombre',
+    'direccion',
+    'descripcion',
+    'link',
+    'gMaps',
+    'actions'
+  ];
   public form = this.fb.group({
     nombre: ['', [Validators.required]],
     direccion: [''],
