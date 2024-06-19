@@ -21,6 +21,8 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./info-admin.component.css'],
 })
 export class InfoAdminComponent implements OnInit {
+  public title = 'Sobre el apartamento'
+
   // *** Piso
   public piso!: Piso;
   public showForm: boolean = false;
@@ -55,7 +57,7 @@ export class InfoAdminComponent implements OnInit {
     this.getInstrucciones();
   }
 
-  
+
 
   // *** Piso
 

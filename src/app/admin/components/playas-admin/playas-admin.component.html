@@ -1,7 +1,10 @@
 <ng-container *ngIf="playas; else elseTemplate">
 
   <div class=" m-5 ">
-
+    <div
+      class="text-l md:text-xl sm:font-light md:font-medium  text-center mb-3 w-full h-2rem flex align-items-center justify-content-center shadow-5 relative">
+      {{title}}
+    </div>
     <table mat-table [dataSource]="playas" class="mat-elevation-z8">
 
       <!-- Id Column -->

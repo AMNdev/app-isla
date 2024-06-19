@@ -18,6 +18,8 @@ import {
   styleUrls: ['./previo-admin.component.css'],
 })
 export class PrevioAdminComponent implements OnInit{
+  public title = 'Antes de llegar'
+
   @ViewChild(MatTable) table!: MatTable<Localizacion>;
 
   // public isFormVisible: boolean = false;

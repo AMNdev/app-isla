@@ -14,6 +14,8 @@ import { FormBuilder, FormGroupDirective, Validators } from '@angular/forms';
   styleUrls: ['./comer-admin.component.css'],
 })
 export class ComerAdminComponent implements OnInit {
+  public title = 'Restaurantes'
+
   @ViewChild(MatTable) table!: MatTable<Restaurante>;
 
   public restaurantes!: Restaurante[];

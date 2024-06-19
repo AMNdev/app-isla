@@ -11,6 +11,9 @@ import { ModalService } from '../../shared/services/modal.service';
   styleUrls: ['./turismo-admin.component.css'],
 })
 export class TurismoAdminComponent implements OnInit {
+
+  public title = 'Turismo'
+
   @ViewChild(MatTable) table!: MatTable<Turismo>;
   public turismo: Turismo[] = [];
   columnas = [

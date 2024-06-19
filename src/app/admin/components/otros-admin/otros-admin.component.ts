@@ -16,6 +16,7 @@ import { FormBuilder, FormGroupDirective, Validators } from '@angular/forms';
   styleUrls: ['./otros-admin.component.css'],
 })
 export class OtrosAdminComponent implements OnInit {
+  public title = 'Otra información útil'
 
   // * Gasolineras
 
@@ -81,7 +82,7 @@ export class OtrosAdminComponent implements OnInit {
     gMaps: [''],
   });
 
-  
+
   constructor(
     private data: OtrosService,
     private fb: FormBuilder,

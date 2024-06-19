@@ -16,6 +16,8 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./playas-admin.component.css'],
 })
 export class PlayasAdminComponent implements OnInit {
+  public title = 'Playas'
+
   @ViewChild(MatTable) table!: MatTable<Playas>;
   public playas!: Playas[];
 
