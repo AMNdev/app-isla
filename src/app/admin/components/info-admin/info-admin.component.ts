@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { InfoService } from 'src/app/features/info/info.service';
 import { ModalService } from '../../shared/services/modal.service';
 import {
@@ -7,13 +7,15 @@ import {
   Piso,
 } from 'src/app/shared/interfaces/info.interface';
 import {
-  FormArray,
   FormControl,
   FormGroup,
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
+import { FileUploadService } from 'src/app/services/file-upload.service';
+import { Observable } from 'rxjs';
+import { ModalImagenService } from '../../shared/services/modal-imagen.service';
 
 @Component({
   selector: 'app-info-admin',
@@ -21,7 +23,7 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./info-admin.component.css'],
 })
 export class InfoAdminComponent implements OnInit {
-  public title = 'Sobre el apartamento'
+  public title = 'Sobre el apartamento';
 
   // *** Piso
   public piso!: Piso;
@@ -50,14 +52,25 @@ export class InfoAdminComponent implements OnInit {
     // actions: new FormControl(''),
   });
 
-  constructor(private data: InfoService, private modals: ModalService) {}
+  // *** Carga de archivos
+  // public imagenSubir?: File;
+  currentFile?: File;
+  progress = 0;
+  message = '';
+  fileName = 'Selecciona imagen';
+  fileInfos?: Observable<any>;
+
+  constructor(
+    private data: InfoService,
+    private modals: ModalService,
+    private fileUpload: FileUploadService,
+    private modalImagen: ModalImagenService
+  ) {}
 
   ngOnInit(): void {
     this.getPiso();
     this.getInstrucciones();
   }
-
-
 
   // *** Piso
 
@@ -142,6 +155,8 @@ export class InfoAdminComponent implements OnInit {
 
   setNewDevice(f: FormGroupDirective) {
     const formData = this.newDevice.value;
+
+
     if (f.form.valid) {
       const sendDevice: Aparato = {
         aparato: formData.newAparato!,
@@ -153,6 +168,9 @@ export class InfoAdminComponent implements OnInit {
       this.data.setInstrucciones(sendDevice).subscribe({
         next: (resp) => {
           this.aparatos.push(resp.instrucciones);
+          this.upload(resp.instrucciones.uid)
+          // TODO: arreglar el renderizado de la tabla con la imagen correspondiente
+          // * lo suyo es meter el archivo en el sendDevice, y trasladar la lógica de la carga de imagen al servicio correspondiente, aunque desde allí se llame al servicio concreto de manejo de imágenes.
           this.table.renderRows();
           f.resetForm();
           this.modals.openSnackBar(
@@ -161,6 +179,52 @@ export class InfoAdminComponent implements OnInit {
         },
         error: (err) => this.modals.openSnackBar(err),
       });
+    }
+  }
+
+  // ! Hazlo todo lo más simple posible!!!!
+
+  // *** Carga de archivos
+  showImage(img:any) {
+    console.log(img)
+    this.modalImagen.abrirModal('hospitales','123',img)
+
+
+
+  }
+  // Selecciona el archivo y lo manda a currentfile
+  selectFile(event: any): void {
+
+    this.progress = 0;
+    this.message = '';
+
+    if (event.target.files && event.target.files[0]) {
+      const file: File = event.target.files[0];
+      this.currentFile = file;
+      this.fileName = this.currentFile.name;
+    } else {
+      this.fileName = 'Select File';
+    }
+  }
+
+  // TODO: necesito una peticion get para obtener las fotos del back??
+  // * no, tengo que meterle un pipe personalizado para cargarla correctamente
+
+
+  // TODO: tengo que seleccionar el archivo y al guardar cambios hacer primero la subida del archivo y después poner la ruta en el campo del form newImagenes y de ahi guardar en la bd el objeto completo
+  // Después hacer un modal de carga de imágenes y poner más bonito el formulario
+  // https://github.com/bezkoder/angular-material-17-file-upload
+  // https://www.bezkoder.com/angular-material-17-file-upload/
+
+  // sube el archivo y limpia
+  upload(id:any) {
+    if (this.currentFile) {
+
+      this.fileUpload.actualizarFoto(this.currentFile, 'instrucciones', id).then(
+        (resp)=>console.log(resp)
+
+      )
+
     }
   }
 }

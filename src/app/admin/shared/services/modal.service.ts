@@ -9,6 +9,7 @@ import {
 
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { ImageModalComponent } from '../image-modal/image-modal.component';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +33,13 @@ export class ModalService {
       data: { text, title },
     });
     return dialogRef.afterClosed();
+  }
+
+  loadImage() {
+    console.log('load image modal')
+
+  //   const dialogRef = this.dialog.open(ImageModalComponent, { },
+  //   });
+  //   return dialogRef.afterClosed();
   }
 }

@@ -16,6 +16,8 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ImageModalComponent } from './shared/image-modal/image-modal.component';
+import { ImagenPipe } from '../pipes/imagen-pipe.pipe';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     PrevioAdminComponent,
     TurismoAdminComponent,
     DialogComponent,
-    LoginComponent
+    LoginComponent,
+    ImageModalComponent,
+    ImagenPipe,
   ],
   imports: [
     AdminRoutingModule,
