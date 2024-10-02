@@ -3,15 +3,15 @@
 
     <div *ngFor="let item of info" class="col-12 md:col-6">
 
-      <mat-card class="  align-items-center shadow-3 m-4">
-        <mat-card-header class="mb-2">
-          <mat-card-title>
+      <div class="  align-items-center shadow-3 m-4">
+        <div class="mb-2">
+          <div>
             <a [routerLink]="['./', item.id]">
               {{item.id| titlecase }}
             </a>
-          </mat-card-title>
-        </mat-card-header>
-      </mat-card>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>

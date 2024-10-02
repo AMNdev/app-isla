@@ -3,14 +3,14 @@
   <div *ngFor="let opcion of opciones" class="col-12 lg:col-4 ">
 
 
-    <mat-card class="align-items-center shadow-3">
-      <mat-card-header class="mb-2">
-        <mat-card-title>
+    <div class="align-items-center shadow-3">
+      <div class="mb-2">
+        <div>
           <a [routerLink]="['./', opcion]">
             {{opcion | titlecase}}
           </a>
-        </mat-card-title>
-      </mat-card-header>
-    </mat-card>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

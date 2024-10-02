@@ -1,14 +1,15 @@
 <ng-container *ngIf="instrucciones; else elseTemplate">
 
-  <mat-tab-group [disableRipple]="false">
-    <mat-tab label="{{aparato.aparato | titlecase}}" *ngFor="let aparato of instrucciones.aparatos">
-      <mat-card class="m-5">
-        <mat-card-header>
-          <mat-card-title>{{aparato.aparato | titlecase}}</mat-card-title>
-          <mat-card-subtitle>Instrucciones de uso</mat-card-subtitle>
-        </mat-card-header>
-        <mat-divider class="mb-3"></mat-divider>
-        <mat-card-content>
+  <div >
+    <!-- <div label="{{aparato.aparato | titlecase}}" > -->
+      <div *ngFor="let aparato of instrucciones.aparatos">
+      <div class="m-5">
+        <div>
+          <div>{{aparato.aparato | titlecase}}</div>
+          <div>Instrucciones de uso</div>
+        </div>
+        <div class="mb-3"></div>
+        <div>
           <p *ngFor="let parte of aparato.descripcion">
             {{parte}}
           </p>
@@ -20,12 +21,12 @@
             <shared-video-container class="col-12 lg:col-8" *ngFor="let video of aparato.video"
               [videoUrl]="video"></shared-video-container>
           </div>
-        </mat-card-content>
+        </div>
 
         <!-- <shared-favoritos></shared-favoritos> -->
-      </mat-card>
-    </mat-tab>
-  </mat-tab-group>
+      </div>
+    </div>
+  </div>
 
 </ng-container>
 

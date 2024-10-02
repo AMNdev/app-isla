@@ -3,18 +3,18 @@
 
     <div *ngFor="let restaurant of restaurants" class="col-12 md:col-6 lg:col-4">
 
-      <mat-card class=" align-items-center shadow-3">
-        <mat-card-header class="mb-2">
-          <mat-card-title>
+      <div class=" align-items-center shadow-3">
+        <div class="mb-2">
+          <div>
             <a [routerLink]="['./', restaurant.id]">
               {{restaurant.nombre}}
             </a>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
+          </div>
+        </div>
+        <div>
           <p class="text-center">{{restaurant.descripcion}}</p>
-        </mat-card-content>
-      </mat-card>
+        </div>
+      </div>
     </div>
   </div>
 </ng-container>
