@@ -1,13 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from '@angular/material/snack-bar';
 
-import { MatDialog } from '@angular/material/dialog';
+
 import { DialogComponent } from '../dialog/dialog.component';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
 
@@ -15,31 +10,26 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
   providedIn: 'root',
 })
 export class ModalService {
-  private horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  private verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private _snackBar: MatSnackBar, private dialog: MatDialog) {}
+  constructor() {}
 
   openSnackBar(message: string, action?: string, durationMS: number = 3000) {
-    this._snackBar.open(message, action, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-      duration: durationMS,
-    });
+
+    };
   }
 
-  openDialog(title?: string, text?: string): Observable<boolean> {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      data: { text, title },
-    });
-    return dialogRef.afterClosed();
-  }
+  // openDialog(title?: string, text?: string): Observable<boolean> {
+  //   const dialogRef = this.dialog.open(DialogComponent, {
+  //     data: { text, title },
+  //   });
+  //   return dialogRef.afterClosed();
+  // }
 
-  loadImage() {
-    console.log('load image modal')
+  // loadImage() {
+  //   console.log('load image modal')
 
   //   const dialogRef = this.dialog.open(ImageModalComponent, { },
   //   });
   //   return dialogRef.afterClosed();
-  }
-}
+  // }
+// }

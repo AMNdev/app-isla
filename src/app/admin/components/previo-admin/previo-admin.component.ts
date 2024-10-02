@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormGroupDirective } from '@angular/forms';
 
-import { MatTable } from '@angular/material/table';
-
 import { PrevioService } from 'src/app/features/previo/previo.service';
 import { ModalService } from '../../shared/services/modal.service';
 
@@ -20,7 +18,7 @@ import {
 export class PrevioAdminComponent implements OnInit{
   public title = 'Antes de llegar'
 
-  @ViewChild(MatTable) table!: MatTable<Localizacion>;
+  // @ViewChild(MatTable) table!: MatTable<Localizacion>;
 
   // public isFormVisible: boolean = false;
   public direcciones!: Localizacion[];
@@ -58,20 +56,20 @@ export class PrevioAdminComponent implements OnInit{
 
   deleteRule(norma: Norma) {
     // Pedir confirmación
-    this.modals
-      .openDialog('¿Desea eliminar la siguiente norma?', norma.norma)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminar la norma
-          this.data.deleteNorma(norma).subscribe({
-            next: () => {
-              this.modals.openSnackBar('Norma eliminada correctamente');
-              this.normas = this.normas.filter((x) => x.id != norma.id);
-            },
-            error: (err) => this.modals.openSnackBar(err),
-          });
-        }
-      });
+    // this.modals
+    //   .openDialog('¿Desea eliminar la siguiente norma?', norma.norma)
+    //   .subscribe((confirmation) => {
+    //     if (confirmation) {
+    //       // Eliminar la norma
+    //       this.data.deleteNorma(norma).subscribe({
+    //         next: () => {
+    //           this.modals.openSnackBar('Norma eliminada correctamente');
+    //           this.normas = this.normas.filter((x) => x.id != norma.id);
+    //         },
+    //         error: (err) => this.modals.openSnackBar(err),
+    //       });
+    //     }
+    //   });
   }
 
   saveRule() {
@@ -106,22 +104,22 @@ export class PrevioAdminComponent implements OnInit{
   delete(toDelete: Localizacion) {
     // Pedir confirmación
     this.modals
-      .openDialog('¿Desea eliminar la siguiente localización?', toDelete.nombre)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminación
-          this.data.deleteAddress(toDelete).subscribe({
-            next: () => {
-              this.direcciones = this.direcciones.filter(
-                (item) => JSON.stringify(item) != JSON.stringify(toDelete)
-              );
-              this.table.renderRows();
-              this.modals.openSnackBar(`Localización eliminada correctamente.`);
-            },
-            error: (err) => this.modals.openSnackBar(err),
-          });
-        }
-      });
+      // .openDialog('¿Desea eliminar la siguiente localización?', toDelete.nombre)
+      // .subscribe((confirmation) => {
+      //   if (confirmation) {
+      //     // Eliminación
+      //     this.data.deleteAddress(toDelete).subscribe({
+      //       next: () => {
+      //         this.direcciones = this.direcciones.filter(
+      //           (item) => JSON.stringify(item) != JSON.stringify(toDelete)
+      //         );
+      //         this.table.renderRows();
+      //         this.modals.openSnackBar(`Localización eliminada correctamente.`);
+      //       },
+      //       error: (err) => this.modals.openSnackBar(err),
+      //     });
+      //   }
+      // });
   }
 
   // toggleForm() {
@@ -141,7 +139,7 @@ export class PrevioAdminComponent implements OnInit{
         this.direcciones.push(resp.direccion);
         f.resetForm();
         this.newPlace.reset();
-        this.table.renderRows();
+        // this.table.renderRows();
 
         this.modals.openSnackBar('Localización añadida correctamente');
       },

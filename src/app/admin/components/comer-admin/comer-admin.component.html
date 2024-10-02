@@ -1,4 +1,4 @@
-<ng-container *ngIf="restaurantes; else elseTemplate">
+<!-- <ng-container *ngIf="restaurantes; else elseTemplate"> -->
 
   <div class=" m-5 ">
     <div
@@ -6,68 +6,68 @@
     {{title}}
   </div>
 
-    <table mat-table [dataSource]="restaurantes" class="mat-elevation-z8">
+    <!-- <table mat-table [dataSource]="restaurantes" class="mat-elevation-z8"> -->
 
       <!-- Name Column -->
-      <ng-container matColumnDef="nombre">
+      <!-- <ng-container matColumnDef="nombre">
         <th mat-header-cell *matHeaderCellDef>Nombre</th>
         <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-      </ng-container>
+      </ng-container> -->
 
       <!-- Address Column -->
-      <ng-container matColumnDef="direccion">
+      <!-- <ng-container matColumnDef="direccion">
         <th mat-header-cell *matHeaderCellDef>Dirección</th>
         <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
-      </ng-container>
+      </ng-container> -->
 
       <!-- Description Column -->
-      <ng-container matColumnDef="descripcion">
+      <!-- <ng-container matColumnDef="descripcion">
         <th mat-header-cell *matHeaderCellDef>Descripción</th>
         <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
-      </ng-container>
+      </ng-container> -->
 
       <!-- Link Column -->
-      <ng-container matColumnDef="link">
+      <!-- <ng-container matColumnDef="link">
         <th mat-header-cell *matHeaderCellDef>Enlace</th>
         <td mat-cell *matCellDef="let element">
           <a href="{{element.link}}" target="_blank">
             <mat-icon>open_in_new</mat-icon>
           </a>
         </td>
-      </ng-container>
+      </ng-container> -->
 
 
       <!-- GPS Column -->
-      <ng-container matColumnDef="gMaps">
+      <!-- <ng-container matColumnDef="gMaps">
         <th mat-header-cell *matHeaderCellDef>Maps</th>
         <td mat-cell *matCellDef="let element">
           <a href="{{element.gMaps}}" target="_blank">
             <mat-icon>open_in_new</mat-icon>
           </a>
         </td>
-      </ng-container>
+      </ng-container> -->
 
       <!-- Actions Column -->
-      <ng-container matColumnDef="actions">
+      <!-- <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Actions </th>
-        <td mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element"> -->
           <!-- TODO: añadir feature editar pasando datos al formulario -->
           <!-- <button mat-button color="primary" (click)="editDirection(this.element)">Edit</button> | -->
-          <button mat-button color="warn" (click)="deleteRestaurant(this.element)">Delete</button>
-        </td>
-      </ng-container>
+          <!-- <button mat-button color="warn" (click)="deleteRestaurant(this.element)">Delete</button>
+        </td> -->
+      <!-- </ng-container> -->
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-    </table>
+    </table> -->
   </div>
 
 
   <div class="px-5 mb-5">
 
     <form [formGroup]="addForm" (ngSubmit)="f.form.valid && addRestaurant(f)" #f="ngForm" class=" w-full">
-
+<!--
       <mat-form-field>
         <mat-label>Nombre</mat-label>
         <input required matInput formControlName="nombre">
@@ -85,28 +85,28 @@
       <mat-form-field>
         <mat-label>Enlace Google Maps</mat-label>
         <input required matInput formControlName="gMaps">
-      </mat-form-field>
+      </mat-form-field> -->
 
       <br>
 
-      <mat-form-field class="w-5">
+      <!-- <mat-form-field class="w-5">
         <mat-label>Descripción</mat-label>
         <textarea cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" matInput
           formControlName="descripcion"></textarea>
-      </mat-form-field>
+      </mat-form-field> -->
 
       <br>
-      <button mat-stroked-button type="submit" color="primary" [disabled]="!addForm.valid">
+      <!-- <button mat-stroked-button type="submit" color="primary" [disabled]="!addForm.valid">
         <mat-icon>add</mat-icon>
       </button>
       <button type="reset" mat-stroked-button color="accent">
         <mat-icon>restart_alt</mat-icon>
       </button>
 
-    </form>
+    </form> -->
 
-  </div>
-</ng-container>
+  <!-- </div> -->
+<!-- </ng-container> -->
 
 
 <ng-template #elseTemplate>

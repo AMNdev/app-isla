@@ -1,8 +1,8 @@
-import { ImagenPipePipe } from './imagen-pipe.pipe';
+import { ImagenPipe } from './imagen-pipe.pipe';
 
-describe('ImagenPipePipe', () => {
+describe('ImagenPipe', () => {
   it('create an instance', () => {
-    const pipe = new ImagenPipePipe();
+    const pipe = new ImagenPipe();
     expect(pipe).toBeTruthy();
   });
 });

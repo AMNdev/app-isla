@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OtrosService } from 'src/app/features/otros/otros.service';
 import { ModalService } from '../../shared/services/modal.service';
-import { MatTable } from '@angular/material/table';
 
 import {
   Gasolineras,
@@ -20,7 +19,7 @@ export class OtrosAdminComponent implements OnInit {
 
   // * Gasolineras
 
-  @ViewChild(MatTable) gasolinerasTabla!: MatTable<Gasolineras>;
+  // @ViewChild(MatTable) gasolinerasTabla!: MatTable<Gasolineras>;
   public gasolineras: Gasolineras[] = [];
   columnasGasolineras = [
     'nombre',
@@ -42,7 +41,7 @@ export class OtrosAdminComponent implements OnInit {
 
   // * Salud
 
-  @ViewChild(MatTable) saludTabla!: MatTable<Salud>;
+  // @ViewChild(MatTable) saludTabla!: MatTable<Salud>;
   public salud!: Salud[];
   columnasSalud = [
     'nombre',
@@ -64,7 +63,7 @@ export class OtrosAdminComponent implements OnInit {
 
   // * Tiendas
 
-  @ViewChild(MatTable) tiendasTabla!: MatTable<Tiendas>;
+  // @ViewChild(MatTable) tiendasTabla!: MatTable<Tiendas>;
   public tiendas!: Tiendas[];
   columnasTiendas = [
     'nombre',
@@ -113,7 +112,7 @@ export class OtrosAdminComponent implements OnInit {
         this.gasolineras.push(resp.gasolinera);
         f.resetForm();
         this.gasolineraForm.reset();
-        this.gasolinerasTabla.renderRows();
+        // this.gasolinerasTabla.renderRows();
         this.modals.openSnackBar('Gasolinera añadida correctamente');
       },
       error: (err) => this.modals.openSnackBar(err),
@@ -121,23 +120,23 @@ export class OtrosAdminComponent implements OnInit {
   }
 
   deleteGasolinera(toDelete: Gasolineras) {
-    this.modals
-      .openDialog('¿Desea eliminar la siguiente gasolinera?', toDelete.nombre)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminación
-          this.data.deleteGasolinera(toDelete).subscribe({
-            next: () => {
-              this.gasolineras = this.gasolineras.filter(
-                (item) => JSON.stringify(item) != JSON.stringify(toDelete)
-              );
-              this.gasolinerasTabla.renderRows();
-              this.modals.openSnackBar(`Gasolinera eliminada correctamente.`);
-            },
-            error: (err) => this.modals.openSnackBar(err),
-          });
-        }
-      });
+    // this.modals
+    //   .openDialog('¿Desea eliminar la siguiente gasolinera?', toDelete.nombre)
+    //   .subscribe((confirmation) => {
+    //     if (confirmation) {
+    //       // Eliminación
+    //       this.data.deleteGasolinera(toDelete).subscribe({
+    //         next: () => {
+    //           this.gasolineras = this.gasolineras.filter(
+    //             (item) => JSON.stringify(item) != JSON.stringify(toDelete)
+    //           );
+    //           this.gasolinerasTabla.renderRows();
+    //           this.modals.openSnackBar(`Gasolinera eliminada correctamente.`);
+    //         },
+    //         error: (err) => this.modals.openSnackBar(err),
+    //       });
+    //     }
+    //   });
   }
 
   // * Salud
@@ -158,7 +157,7 @@ export class OtrosAdminComponent implements OnInit {
         this.salud.push(resp.salud);
         f.resetForm();
         this.saludForm.reset();
-        this.saludTabla.renderRows();
+        // this.saludTabla.renderRows();
         this.modals.openSnackBar('Centro añadido correctamente');
       },
       error: (err) => this.modals.openSnackBar(err),
@@ -166,23 +165,23 @@ export class OtrosAdminComponent implements OnInit {
   }
 
   deleteSalud(toDelete: Salud) {
-    this.modals
-      .openDialog('¿Desea eliminar el siguiente centro?', toDelete.nombre)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminación
-          this.data.deleteSalud(toDelete).subscribe({
-            next: () => {
-              this.salud = this.salud.filter(
-                (item) => JSON.stringify(item) != JSON.stringify(toDelete)
-              );
-              this.saludTabla.renderRows();
-              this.modals.openSnackBar(`Centro eliminado correctamente.`);
-            },
-            error: (err) => this.modals.openSnackBar(err),
-          });
-        }
-      });
+    // this.modals
+    //   .openDialog('¿Desea eliminar el siguiente centro?', toDelete.nombre)
+    //   .subscribe((confirmation) => {
+    //     if (confirmation) {
+    //       // Eliminación
+    //       this.data.deleteSalud(toDelete).subscribe({
+    //         next: () => {
+    //           this.salud = this.salud.filter(
+    //             (item) => JSON.stringify(item) != JSON.stringify(toDelete)
+    //           );
+    //           this.saludTabla.renderRows();
+    //           this.modals.openSnackBar(`Centro eliminado correctamente.`);
+    //         },
+    //         error: (err) => this.modals.openSnackBar(err),
+    //       });
+    //     }
+    //   });
   }
 
   // * Tiendas
@@ -203,7 +202,7 @@ export class OtrosAdminComponent implements OnInit {
         this.tiendas.push(resp.tienda);
         f.resetForm();
         this.tiendasForm.reset();
-        this.tiendasTabla.renderRows();
+        // this.tiendasTabla.renderRows();
         this.modals.openSnackBar('Tienda añadida correctamente');
       },
       error: (err) => this.modals.openSnackBar(err),
@@ -211,22 +210,22 @@ export class OtrosAdminComponent implements OnInit {
   }
 
   deleteTienda(toDelete: Tiendas) {
-    this.modals
-      .openDialog('¿Desea eliminar la siguente tienda?', toDelete.nombre)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminación
-          this.data.deleteTienda(toDelete).subscribe({
-            next: () => {
-              this.tiendas = this.tiendas.filter(
-                (item) => JSON.stringify(item) != JSON.stringify(toDelete)
-              );
-              this.tiendasTabla.renderRows();
-              this.modals.openSnackBar(`Tienda eliminada correctamente.`);
-            },
-            error: (err) => this.modals.openSnackBar(err),
-          });
-        }
-      });
+    // this.modals
+    //   .openDialog('¿Desea eliminar la siguente tienda?', toDelete.nombre)
+    //   .subscribe((confirmation) => {
+    //     if (confirmation) {
+    //       // Eliminación
+    //       this.data.deleteTienda(toDelete).subscribe({
+    //         next: () => {
+    //           this.tiendas = this.tiendas.filter(
+    //             (item) => JSON.stringify(item) != JSON.stringify(toDelete)
+    //           );
+    //           this.tiendasTabla.renderRows();
+    //           this.modals.openSnackBar(`Tienda eliminada correctamente.`);
+    //         },
+    //         error: (err) => this.modals.openSnackBar(err),
+    //       });
+    //     }
+    //   });
   }
 }

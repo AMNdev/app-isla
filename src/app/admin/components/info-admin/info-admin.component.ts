@@ -12,7 +12,7 @@ import {
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
-import { MatTable } from '@angular/material/table';
+
 import { FileUploadService } from 'src/app/services/file-upload.service';
 import { Observable } from 'rxjs';
 import { ModalImagenService } from '../../shared/services/modal-imagen.service';
@@ -34,7 +34,7 @@ export class InfoAdminComponent implements OnInit {
   });
 
   //  *** Instrucciones
-  @ViewChild(MatTable) table!: MatTable<Aparato>;
+  // @ViewChild(MatTable) table!: MatTable<Aparato>;
   public instrucciones!: Instrucciones;
   public aparatos!: Aparato[];
   public displayedColumns = [
@@ -110,17 +110,17 @@ export class InfoAdminComponent implements OnInit {
   deleteVideo(index: number) {
     // this.pisoHasChanges = true;
 
-    this.modals
-      .openDialog(
-        '¿Desea eliminar el vídeo?',
-        this.piso.video.at(index)?.videoDescripcion
-      )
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          this.piso.video.splice(index, 1);
-          this.setPiso();
-        }
-      });
+    // this.modals
+    //   .openDialog(
+    //     '¿Desea eliminar el vídeo?',
+    //     this.piso.video.at(index)?.videoDescripcion
+    //   )
+    //   .subscribe((confirmation) => {
+    //     if (confirmation) {
+    //       this.piso.video.splice(index, 1);
+    //       this.setPiso();
+    //     }
+    //   });
   }
 
   showAddForm() {
@@ -144,7 +144,7 @@ export class InfoAdminComponent implements OnInit {
       next: (resp) => {
         const indice = this.aparatos.indexOf(element);
         this.aparatos.splice(indice, 1);
-        this.table.renderRows();
+        // this.table.renderRows();
         this.modals.openSnackBar(
           `Aparato eliminado correctamente: ${resp.instrucciones.aparato}`
         );
@@ -171,7 +171,7 @@ export class InfoAdminComponent implements OnInit {
           this.upload(resp.instrucciones.uid)
           // TODO: arreglar el renderizado de la tabla con la imagen correspondiente
           // * lo suyo es meter el archivo en el sendDevice, y trasladar la lógica de la carga de imagen al servicio correspondiente, aunque desde allí se llame al servicio concreto de manejo de imágenes.
-          this.table.renderRows();
+          // this.table.renderRows();
           f.resetForm();
           this.modals.openSnackBar(
             `Aparato añadido con éxito: ${resp.instrucciones.aparato}`

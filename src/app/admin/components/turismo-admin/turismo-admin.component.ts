@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroupDirective, Validators } from '@angular/forms';
-import { MatTable } from '@angular/material/table';
 import { TurismoService } from 'src/app/features/turismo/turismo.service';
 import { Turismo } from 'src/app/shared/interfaces/turismo.interface';
 import { ModalService } from '../../shared/services/modal.service';
@@ -14,7 +13,7 @@ export class TurismoAdminComponent implements OnInit {
 
   public title = 'Turismo'
 
-  @ViewChild(MatTable) table!: MatTable<Turismo>;
+  // @ViewChild(MatTable) table!: MatTable<Turismo>;
   public turismo: Turismo[] = [];
   columnas = [
     'nombre',
@@ -58,7 +57,7 @@ export class TurismoAdminComponent implements OnInit {
         this.turismo.push(resp.turismoItem);
         f.resetForm();
         this.form.reset();
-        this.table.renderRows();
+        // this.table.renderRows();
         this.modals.openSnackBar('Turismo añadido correctamente');
       },
       error: (err) => this.modals.openSnackBar(err),
@@ -66,25 +65,25 @@ export class TurismoAdminComponent implements OnInit {
   }
 
   deleteTurismo(toDelete: Turismo) {
-    this.modals
-      .openDialog('¿Desea eliminar el elemento?', toDelete.nombre)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminación
-          this.data.deleteTurismo(toDelete).subscribe({
-            next: (eliminado) => {
-              this.turismo = this.turismo.filter(
-                (item) =>
-                  JSON.stringify(item) != JSON.stringify(eliminado.turismoItem)
-              );
-              this.table.renderRows();
-              this.modals.openSnackBar(
-                `Elemento eliminado correctamente: ${eliminado.turismoItem.nombre}`
-              );
-            },
-            error: (err) => this.modals.openSnackBar(err),
-          });
-        }
-      });
+    // this.modals
+    //   .openDialog('¿Desea eliminar el elemento?', toDelete.nombre)
+    //   .subscribe((confirmation:any) => {
+    //     if (confirmation) {
+    //       // Eliminación
+    //       this.data.deleteTurismo(toDelete).subscribe({
+    //         next: (eliminado) => {
+    //           this.turismo = this.turismo.filter(
+    //             (item) =>
+    //               JSON.stringify(item) != JSON.stringify(eliminado.turismoItem)
+    //           );
+    //           this.table.renderRows();
+    //           this.modals.openSnackBar(
+    //             `Elemento eliminado correctamente: ${eliminado.turismoItem.nombre}`
+    //           );
+    //         },
+    //         error: (err) => this.modals.openSnackBar(err),
+    //       });
+    //     }
+    //   });
   }
 }

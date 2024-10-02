@@ -8,7 +8,6 @@ import {
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
-import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-playas-admin',
@@ -18,7 +17,7 @@ import { MatTable } from '@angular/material/table';
 export class PlayasAdminComponent implements OnInit {
   public title = 'Playas'
 
-  @ViewChild(MatTable) table!: MatTable<Playas>;
+  // @ViewChild(MatTable) table!: MatTable<Playas>;
   public playas!: Playas[];
 
   // todo: eliminar los datos del input
@@ -72,7 +71,7 @@ export class PlayasAdminComponent implements OnInit {
           this.playas.push(resp.playas);
           f.resetForm();
           this.newPlaya.reset();
-          this.table.renderRows();
+          // this.table.renderRows();
           this.modals.openSnackBar(
             `Playa añadida con éxito: ${resp.playas.nombre} - ${resp.playas.descripcion}`
           );
@@ -85,19 +84,19 @@ export class PlayasAdminComponent implements OnInit {
   deletePlaya(playa: Playas) {
     // Pedir confirmación
     this.modals
-      .openDialog('¿Desea eliminar la siguiente playa?', playa.nombre)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminar la norma
-          this.data.deletePlaya(playa).subscribe({
-            next: () => {
-              this.modals.openSnackBar('Playa eliminada correctamente');
-              this.playas = this.playas.filter((x) => x.uid != playa.uid);
-            },
-            error: ({ message }) => this.modals.openSnackBar(message),
-          });
-        }
-      });
+      // .openDialog('¿Desea eliminar la siguiente playa?', playa.nombre)
+      // .subscribe((confirmation) => {
+      //   if (confirmation) {
+      //     // Eliminar la norma
+      //     this.data.deletePlaya(playa).subscribe({
+      //       next: () => {
+      //         this.modals.openSnackBar('Playa eliminada correctamente');
+      //         this.playas = this.playas.filter((x) => x.uid != playa.uid);
+      //       },
+      //       error: ({ message }) => this.modals.openSnackBar(message),
+      //     });
+        // }
+      // });
   }
 
   checkUniqueId(id: string): boolean {

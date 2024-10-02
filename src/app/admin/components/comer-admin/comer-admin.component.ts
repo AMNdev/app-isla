@@ -5,7 +5,6 @@ import {
   Restaurante,
   RestauranteRespuesta,
 } from 'src/app/shared/interfaces/restaurantes.interface';
-import { MatTable } from '@angular/material/table';
 import { FormBuilder, FormGroupDirective, Validators } from '@angular/forms';
 
 @Component({
@@ -16,7 +15,7 @@ import { FormBuilder, FormGroupDirective, Validators } from '@angular/forms';
 export class ComerAdminComponent implements OnInit {
   public title = 'Restaurantes'
 
-  @ViewChild(MatTable) table!: MatTable<Restaurante>;
+  // @ViewChild(MatTable) table!: MatTable<Restaurante>;
 
   public restaurantes!: Restaurante[];
   public addForm = this.fb.group({
@@ -64,7 +63,6 @@ export class ComerAdminComponent implements OnInit {
 
         form.resetForm();
         this.addForm.reset();
-        this.table.renderRows();
 
         this.modals.openSnackBar(
           `Restaurante añadido correctamente: ${nuevo.nombre}`
@@ -76,23 +74,23 @@ export class ComerAdminComponent implements OnInit {
 
   deleteRestaurant(toDelete: Restaurante) {
     // Pedir confirmación
-    this.modals
-      .openDialog('¿Desea eliminar el siguiente restaurante?', toDelete.nombre)
-      .subscribe((confirmation) => {
-        if (confirmation) {
-          // Eliminación
-          this.data.deleteRestaurant(toDelete).subscribe({
-            next: () => {
-              this.restaurantes = this.restaurantes.filter(
-                (item) => JSON.stringify(item) != JSON.stringify(toDelete)
-              );
-              // this.table.renderRows();
-              this.modals.openSnackBar(`Restaurante eliminado correctamente.`);
-            },
-            error: (err) => this.modals.openSnackBar(err),
-          });
-        }
-      });
+    // this.modals
+    //   .openDialog('¿Desea eliminar el siguiente restaurante?', toDelete.nombre)
+    //   .subscribe((confirmation) => {
+    //     if (confirmation) {
+    //       // Eliminación
+    //       this.data.deleteRestaurant(toDelete).subscribe({
+    //         next: () => {
+    //           this.restaurantes = this.restaurantes.filter(
+    //             (item) => JSON.stringify(item) != JSON.stringify(toDelete)
+    //           );
+    //           // this.table.renderRows();
+    //           this.modals.openSnackBar(`Restaurante eliminado correctamente.`);
+    //         },
+    //         error: (err) => this.modals.openSnackBar(err),
+    //       });
+    //     }
+    //   });
   }
 
   modifyRestaurant(venue: Restaurante) {
