@@ -28,24 +28,12 @@ export class InfoService {
   // obtiene las categorías de información (piso, instrucciones...)
   // FIXME: bastante inútil
   getInfoList(): Observable<Info[]> {
-    return this.http.get<Info[]>(`${this.baseUrl}/api/info`).pipe(
-      catchError((err: Error) => {
-        console.error(err.message);
-        return throwError(() => new Error('Error recibiendo lista'));
-      })
-    );
+    return this.http.get<Info[]>(`${this.baseUrl}/api/info`);
   }
 
-  // Obtiene la info de cada categoría
-  // fixme: no usada!
-  // getInfoByID(id: string) {
-  //   return this.http.get(`${this.baseUrl}/info?id=${id}`).pipe(
-  //     catchError((err: Error) => {
-  //       console.error(err.message);
-  //       return throwError(() => new Error('Error recibiendo datos'));
-  //     })
-  //   );
-  // }
+  getInfoByID(id: string) {
+    return this.http.get(`${this.baseUrl}/info?id=${id}`);
+  }
 
   getPiso(): Observable<PisoRespuesta> {
     return this.http.get<PisoRespuesta>(`${this.baseUrl}/api/piso`).pipe(

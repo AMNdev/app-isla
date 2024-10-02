@@ -25,7 +25,7 @@ export class TurismoService {
   // * Public:
 
   getTurismo(): Observable<GetTurismo> {
-    return this.http.get<GetTurismo>(`${this.baseUrl}/api/turismo`);
+    return this.http.get<GetTurismo>(`${this.baseUrl}/api/api/turismo`);
   }
 
   // * Admin:
