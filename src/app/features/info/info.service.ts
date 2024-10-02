@@ -13,7 +13,7 @@ export class InfoService {
   constructor(private http: HttpClient) {}
 
   getInfoList(): Observable<Info[]> {
-    return this.http.get<Info[]>(`${this.baseUrl}/info`);
+    return this.http.get<Info[]>(`${this.baseUrl}/api/info`);
   }
 
   getInfoByID(id: string) {

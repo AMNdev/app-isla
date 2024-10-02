@@ -13,6 +13,6 @@ export class TurismoService {
   constructor(private http: HttpClient) { }
 
   getTurismo(): Observable<Turismo[]> {
-    return this.http.get<Turismo[]>(`${this.baseUrl}/turismo`)
+    return this.http.get<Turismo[]>(`${this.baseUrl}/api/turismo`)
   }
 }
