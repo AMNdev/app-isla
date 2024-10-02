@@ -1,27 +1,27 @@
 <ng-container *ngIf="playa; else elseTemplate">
 
-  <mat-card class="m-5">
-    <mat-card-header>
-      <mat-card-title>{{playa.nombre}}</mat-card-title>
-      <mat-card-subtitle>
+  <div class="m-5">
+    <div>
+      <div>{{playa.nombre}}</div>
+      <div>
          <!-- {{playa.direccion}} -->
          <img class="max-h-10rem" matCardImage src="{{playa.imagen}}">
-        </mat-card-subtitle>
-    </mat-card-header>
+        </div>
+    </div>
 
-    <mat-card-content>
+    <div>
       <p>
         {{playa.descripcion}}
       </p>
-    </mat-card-content>
+    </div>
 
     <!-- <shared-favoritos></shared-favoritos> -->
 
-    <mat-card-actions class="flex justify-content-between	">
+    <div class="flex justify-content-between	">
 
       <a href="{{playa.gMaps}}" target="_blank">Como llegar</a>
-    </mat-card-actions>
-  </mat-card>
+    </div>
+  </div>
 
 </ng-container>
 

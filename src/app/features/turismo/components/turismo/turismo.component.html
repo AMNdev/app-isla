@@ -2,20 +2,20 @@
   <div class="grid p-3">
     <div *ngFor="let item of turismo" class="col-12 md:col-6 lg:col-3">
 
-      <mat-card class=" align-items-center shadow-3">
-        <mat-card-header class="mb-2">
-          <mat-card-title>{{item.nombre}}</mat-card-title>
-          <mat-card-subtitle>{{item.descripcion}}</mat-card-subtitle>
-        </mat-card-header>
+      <div class=" align-items-center shadow-3">
+        <div class="mb-2">
+          <div>{{item.nombre}}</div>
+          <div>{{item.descripcion}}</div>
+        </div>
 
-        <mat-divider></mat-divider>
+        <div></div>
 
-        <mat-card-content>
+        <div>
           <p class="text-center">{{item.direccion}}</p>
-        </mat-card-content>
+        </div>
 
         <a href="{{item.gMaps}}" target="_blank">Como llegar</a>
-      </mat-card>
+      </div>
     </div>
   </div>
 </ng-container>
