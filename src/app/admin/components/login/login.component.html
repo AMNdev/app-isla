@@ -1,37 +1,47 @@
-<div class="flex flex-column justify-content-center border-1 border-round-sm border-solid max-w-30rem m-auto mt-8 p-3">
+<div
+  class="w-10 flex flex-column justify-content-center border-1 border-round-sm border-solid max-w-30rem m-auto mt-8 p-3">
 
-  <h3 class="flex align-items-center justify-content-center">Acceso de Administración</h3>
-  <!-- <mat-divider></mat-divider> -->
+  <h3 class="bg-primary flex bg-try align-items-center justify-content-center ">Acceso de Administración</h3>
 
-  <!-- <ng-container *ngIf="isLogging; else elseTemplate">
+
+  <ng-container *ngIf="isLogging; else elseTemplate">
     <shared-spinner></shared-spinner>
-  </ng-container> -->
+  </ng-container>
 
   <ng-template #elseTemplate>
     <form (ngSubmit)="login()" [formGroup]="loginForm">
 
-      <div class="flex align-items-center justify-content-center border-round-sm p-2 ">
-        <!-- <mat-form-field class="w-full">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="Introduce email" formControlName="email" required>
-          <mat-error>{{invalidField('email')}}</mat-error>
-        </mat-form-field> -->
+      <div class=" flex flex-column justify-content-center border-round-sm p-2 ">
+        <label for="email">Correo Electrónico</label>
+        <input id="email" formControlName="email" type="email" class="form-control" placeholder="Introduce tu email" />
+        <!-- Mostrar mensaje de error si el campo no es válido -->
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <small class="bg-primary" *ngIf="loginForm.get('email')?.hasError('required')">
+            El correo electrónico es requerido
+          </small>
+          <small class="bg-primary" *ngIf="loginForm.get('email')?.hasError('email')">
+            El correo electrónico no es válido
+          </small>
+        </div>
       </div>
 
-      <div class="flex align-items-center justify-content-center border-round-sm p-2 ">
-        <!-- <mat-form-field class="w-full">
-          <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="xxxxxx">
-          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-error>{{invalidField('password')}}</mat-error>
-        </mat-form-field> -->
+      <div class="flex flex-column justify-content-center border-round-sm p-2 ">
+        <label for="password">Contraseña</label>
+        <input id="password" formControlName="password" type="password" class="form-control"
+          placeholder="Introduce tu contraseña" />
+        <!-- Mostrar mensaje de error si el campo no es válido -->
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')!.touched">
+          <small class="text-danger" *ngIf="loginForm.get('password')!.hasError('required')">
+            La contraseña es requerida
+          </small>
+          <small class="text-danger" *ngIf="loginForm.get('password')?.hasError('minlength')">
+            La contraseña debe tener al menos 6 caracteres
+          </small>
+        </div>
       </div>
 
       <div class="flex align-items-center justify-content-center border-round-sm p-2">
-        <!-- <button class="w-full" mat-stroked-button color="primary" [disabled]="loginForm.invalid">Acceder</button> -->
+        <button type="submit" class="border-none bg-cyan-500 p-3" [disabled]="loginForm.invalid">Iniciar Sesión</button>
       </div>
 
     </form>

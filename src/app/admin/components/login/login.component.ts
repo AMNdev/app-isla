@@ -37,7 +37,10 @@ export class LoginComponent {
       console.log('Invalid login form');
       return;
     }
-    // this.modals.openSnackBar('Accediendo...');
+    console.log('haciendo login')
+
+
+    // this.modals.openSnackBar('Accediendo...'); TODO:
     this.isLogging = true;
     this.loginService.loginUser(this.loginForm.value as Usuario).subscribe({
       next: (resp) => {
@@ -51,17 +54,17 @@ export class LoginComponent {
     });
   }
 
-  invalidField(field: string) {
-    if (this.loginForm.get(field)!.hasError('required')) {
-      return 'You must enter a value';
-    }
-    if (this.loginForm.get(field)!.hasError('email')) {
-      return 'Not a valid email';
-    }
-    if (this.loginForm.get(field)!.hasError('minlength')) {
-      return 'At least 6 characters';
-    }
-    return '';
-  }
+  // invalidField(field: string) {
+  //   if (this.loginForm.get(field)!.hasError('required')) {
+  //     return 'You must enter a value';
+  //   }
+  //   if (this.loginForm.get(field)!.hasError('email')) {
+  //     return 'Not a valid email';
+  //   }
+  //   if (this.loginForm.get(field)!.hasError('minlength')) {
+  //     return 'At least 6 characters';
+  //   }
+  //   return '';
+  // }
 }
 
