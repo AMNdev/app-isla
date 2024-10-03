@@ -18,7 +18,9 @@ const routes: Routes = [
   {
     path: 'admin',
     component: LayoutPageComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
+  // todo: reactivar el guard
+
     children: [
       { path: '', component: AdminMenuComponent },
       { path: 'comer', component: ComerAdminComponent },

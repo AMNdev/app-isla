@@ -11,7 +11,7 @@ import { ModalService } from '../../shared/services/modal.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  public hide = true;
+  public fieldTextType = false;
   public isLogging = false;
 
   // todo: eliminar correo y contraseña
@@ -37,8 +37,7 @@ export class LoginComponent {
       console.log('Invalid login form');
       return;
     }
-    console.log('haciendo login')
-
+    console.log('haciendo login');
 
     // this.modals.openSnackBar('Accediendo...'); TODO:
     this.isLogging = true;
@@ -48,23 +47,12 @@ export class LoginComponent {
       },
       error: (err) => {
         this.isLogging = false;
-        this.modals.openSnackBar(err.name)
-        console.error(err)
+        this.modals.openSnackBar(err.name);
+        console.error(err);
       },
     });
   }
-
-  // invalidField(field: string) {
-  //   if (this.loginForm.get(field)!.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-  //   if (this.loginForm.get(field)!.hasError('email')) {
-  //     return 'Not a valid email';
-  //   }
-  //   if (this.loginForm.get(field)!.hasError('minlength')) {
-  //     return 'At least 6 characters';
-  //   }
-  //   return '';
-  // }
+  showPasswd() {
+    this.fieldTextType = !this.fieldTextType;
+  }
 }
-

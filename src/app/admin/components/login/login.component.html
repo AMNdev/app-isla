@@ -1,8 +1,7 @@
 <div
   class="w-10 flex flex-column justify-content-center border-1 border-round-sm border-solid max-w-30rem m-auto mt-8 p-3">
 
-  <h3 class="bg-primary flex bg-try align-items-center justify-content-center ">Acceso de Administración</h3>
-
+  <h3 class="flex bg-try align-items-center justify-content-center ">Acceso de Administración</h3>
 
   <ng-container *ngIf="isLogging; else elseTemplate">
     <shared-spinner></shared-spinner>
@@ -27,8 +26,13 @@
 
       <div class="flex flex-column justify-content-center border-round-sm p-2 ">
         <label for="password">Contraseña</label>
-        <input id="password" formControlName="password" type="password" class="form-control"
-          placeholder="Introduce tu contraseña" />
+        <div class="flex flex-row justify-content-between bg-primary">
+
+          <input class="flex-grow-1 " id="password" formControlName="password"
+            [type]="fieldTextType ? 'text' : 'password'" placeholder="Introduce tu contraseña" />
+          <button class="flex-none" type="button" (click)="showPasswd()">Mostrar</button>
+        </div>
+
         <!-- Mostrar mensaje de error si el campo no es válido -->
         <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')!.touched">
           <small class="text-danger" *ngIf="loginForm.get('password')!.hasError('required')">

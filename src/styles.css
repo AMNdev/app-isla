@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-/* :root{
+:root{
   --primary-color:blue;
   --primary-color-text: wheat;
-} */
+  --secondary-color: red;
+  --seconday-color-text: green;
+}
 html,
 body {
   height: 100%;
@@ -13,7 +15,12 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-/* .bg-primary {
+.bg1 {
   background-color: var(--primary-color);
   color: var(--primary-color-text);
-} */
+}
+
+.bg2{
+  background-color: var(--secondary-color);
+  color: var(--secondary-color-text);
+}

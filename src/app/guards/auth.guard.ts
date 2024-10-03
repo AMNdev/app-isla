@@ -6,7 +6,6 @@ import { LoginService } from '../admin/shared/services/login.service';
 export const AuthGuard: CanActivateFn = (route, state) => {
   const loginService = inject(LoginService);
   const router = inject(Router);
-
   return loginService.validarToken().pipe(
     tap((isAuthenticated) => {
       if (!isAuthenticated) {
